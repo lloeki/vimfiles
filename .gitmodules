@@ -1,0 +1,3 @@
+[submodule "bundle.available/vim-colors-solarized"]
+	path = bundle.available/vim-colors-solarized
+	url = http://github.com/altercation/vim-colors-solarized.git

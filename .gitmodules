@@ -13,3 +13,6 @@
 [submodule "bundle.available/vim-surround"]
 	path = bundle.available/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle.available/matchit"]
+	path = bundle.available/matchit
+	url = https://github.com/edsono/vim-matchit

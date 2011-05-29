@@ -1,3 +1,6 @@
 [submodule "bundle.available/vim-colors-solarized"]
 	path = bundle.available/vim-colors-solarized
 	url = http://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle.available/command-t"]
+	path = bundle.available/command-t
+	url = https://github.com/wincent/Command-T.git

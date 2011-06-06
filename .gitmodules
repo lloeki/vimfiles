@@ -16,6 +16,3 @@
 [submodule "bundle.available/matchit"]
 	path = bundle.available/matchit
 	url = https://github.com/edsono/vim-matchit
-[submodule "bundle.available/autoclose"]
-	path = bundle.available/autoclose
-	url = https://github.com/vim-scripts/AutoClose.git

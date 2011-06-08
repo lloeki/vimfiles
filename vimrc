@@ -28,7 +28,8 @@ if has('gui_running') "GUI specific settings
 
 else "non-GUI
     set background=dark
-    set showtabline=0           "no tab bar
+    set showtabline=1           "automatic tab bar
+    set mouse=a                 "mouse support
 endif
 
 "color theme
@@ -40,9 +41,15 @@ let g:solarized_termtrans=1
 colorscheme solarized
 
 "special case fixes
-"if &term =~ "vt100"
+if &term =~ "vt100"
 "    let &term="xterm"
-"endif
+endif
+
+if &term =~ "screen"
+     "fix for cursor keys in e.g Command-T
+     "the one described in :help vt100-cursor-keys does not work
+     let &term="xterm"
+endif
 
 "if &term =~ "xterm"
 "    if has("terminfo")
@@ -103,10 +110,14 @@ autocmd FileType make set noexpandtab   "makefiles need tabs
 "swap files
 "set directory=/var/tmp,.
 
+"buffer management
+set swb=usetab      "make :sb <filename> go to tabs too
+
 "key mappings
 let mapleader = ','
 
 "Command-T mappings
+let g:CommandTMatchWindowReverse=1
 let g:CommandTAcceptSelectionTabMap='<CR>'
 let g:CommandTAcceptSelectionMap='<C-r>'
 

@@ -116,10 +116,10 @@ set swb=usetab      "make :sb <filename> go to tabs too
 "key mappings
 let mapleader = ','
 
-"Command-T mappings
+"Command-T options
 let g:CommandTMatchWindowReverse=1
-let g:CommandTAcceptSelectionTabMap='<CR>'
-let g:CommandTAcceptSelectionMap='<C-r>'
+"let g:CommandTAcceptSelectionTabMap='<CR>'
+"let g:CommandTAcceptSelectionMap='<C-r>'
 
 " xterm escape codes for osx-like cursor motion
 "noremap [1;3D <C-Left>

@@ -121,19 +121,18 @@ let g:CommandTMatchWindowReverse=1
 "let g:CommandTAcceptSelectionTabMap='<CR>'
 "let g:CommandTAcceptSelectionMap='<C-r>'
 
-" xterm escape codes for osx-like cursor motion
-"noremap [1;3D <C-Left>
-"noremap [1;3C <C-Right>
-"noremap [H <Home>
-"noremap [F <End>
-"noremap [1;5D <Home>
-"noremap [1;5C <End>
-"noremap! [1;3D <C-Left>
-"noremap! [1;3C <C-Right>
-"noremap! [H <Home>
-"noremap! [F <End>
-"noremap! [1;5D <Home>
-"noremap! [1;5C <End>
+"xterm key combos
+map OD <M-Left>
+map OC <M-Right>
+noremap [D <C-Left>
+noremap [C <C-Right>
+"OSX control key
+noremap [1;5D <Home>
+noremap [1;5C <End>
+
+" make meta move on words like control
+noremap <M-Left> <C-Left>
+noremap <M-Right> <C-Right>
 
 " highlight background for >80
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929

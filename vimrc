@@ -14,20 +14,19 @@ set backspace=indent,eol,start
 if has('gui_running') "GUI specific settings
     
     "better font
-    set guifont=Menlo:h12
+    "set guifont=Menlo:h12
     
     "no toolbar
     set guioptions-=T
 
     set background=light
-    set transparency=8
+    "set transparency=8
 
     "window size
     set columns=90
     set lines=30
 
 else "non-GUI
-    set background=dark
     set showtabline=1           "automatic tab bar
     set mouse=a                 "mouse support
 endif
@@ -35,6 +34,7 @@ endif
 "color theme
 "colorscheme desert
 "colorscheme delek
+set background=light
 let g:solarized_termcolors=16
 let g:solarized_visibility="low"
 let g:solarized_termtrans=1

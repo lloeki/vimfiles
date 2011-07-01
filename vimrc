@@ -106,6 +106,7 @@ set list
 
 "filetype specific settings
 autocmd FileType make set noexpandtab   "makefiles need tabs
+autocmd FileType ruby set softtabstop=2 shiftwidth=2
 
 "swap files
 "set directory=/var/tmp,.

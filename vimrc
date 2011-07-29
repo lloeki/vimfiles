@@ -127,16 +127,34 @@ let g:CommandTMatchWindowReverse=1
 
 "xterm key combos
 map OD <M-Left>
+map! OD <M-Left>
 map OC <M-Right>
-noremap [D <C-Left>
-noremap [C <C-Right>
-"OSX control key
-noremap [1;5D <Home>
-noremap [1;5C <End>
+map! OC <M-Right>
+map [D <C-Left>
+map! [D <C-Left>
+map [C <C-Right>
+map! [C <C-Right>
+"iTerm2 control+arrows
+map [1;5D <Home>
+map! [1;5D <Home>
+map [1;5C <End>
+map! [1;5C <End>
+"Terminal.app control+arrows
+map [5D <Home>
+map! [5D <Home>
+map [5C <End>
+map! [5C <End>
+"Terminal.app option+arrows
+map b <M-Left>
+map! b <M-Left>
+map f <M-Right>
+map! f <M-Right>
 
 " make meta move on words like control
-noremap <M-Left> <C-Left>
-noremap <M-Right> <C-Right>
+map <M-Left> <C-Left>
+map! <M-Left> <C-Left>
+map <M-Right> <C-Right>
+map! <M-Right> <C-Right>
 
 " highlight background for >80
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929

@@ -8,6 +8,9 @@ call pathogen#runtime_append_all_bundles()
 
 scriptencoding "utf-8"
 
+" prevent .netrwhist creation
+let g:netrw_dirhistmax = 0
+
 "make sure backspace behaves
 set backspace=indent,eol,start
 

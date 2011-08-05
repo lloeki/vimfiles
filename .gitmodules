@@ -16,3 +16,12 @@
 [submodule "bundle.available/matchit"]
 	path = bundle.available/matchit
 	url = https://github.com/edsono/vim-matchit
+[submodule "bundle.available/ack.vim"]
+	path = bundle.available/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "bundle.available/vcscommand"]
+	path = bundle.available/vcscommand
+	url = git://repo.or.cz/vcscommand
+[submodule "bundle.available/git-vim"]
+	path = bundle.available/git-vim
+	url = https://github.com/motemen/git-vim.git

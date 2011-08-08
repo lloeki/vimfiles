@@ -125,20 +125,11 @@ let mapleader = ','
 "let g:CommandTAcceptSelectionTabMap='<CR>'
 "let g:CommandTAcceptSelectionMap='<C-r>'
 
-"xterm key combos
-map OD <M-Left>
-map! OD <M-Left>
-map OC <M-Right>
-map! OC <M-Right>
-map [D <C-Left>
-map! [D <C-Left>
-map [C <C-Right>
-map! [C <C-Right>
-"iTerm2 control+arrows
-map [1;5D <Home>
-map! [1;5D <Home>
-map [1;5C <End>
-map! [1;5C <End>
+"xterm control+arrows
+map [1;5D <C-Left>
+map! [1;5D <C-Left>
+map [1;5C <C-Right>
+map! [1;5C <C-Right>
 "Terminal.app control+arrows
 map [5D <Home>
 map! [5D <Home>

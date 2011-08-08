@@ -121,7 +121,7 @@ set swb=usetab      "make :sb <filename> go to tabs too
 let mapleader = ','
 
 "Command-T options
-let g:CommandTMatchWindowReverse=1
+"let g:CommandTMatchWindowReverse=1
 "let g:CommandTAcceptSelectionTabMap='<CR>'
 "let g:CommandTAcceptSelectionMap='<C-r>'
 

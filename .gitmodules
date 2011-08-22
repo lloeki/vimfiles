@@ -25,3 +25,21 @@
 [submodule "bundle.available/git-vim"]
 	path = bundle.available/git-vim
 	url = https://github.com/motemen/git-vim.git
+[submodule "bundle.available/closetag"]
+	path = bundle.available/closetag
+	url = git://github.com/docunext/closetag.vim.git
+[submodule "bundle.available/pyflakes"]
+	path = bundle.available/pyflakes
+	url = git://github.com/kevinw/pyflakes-vim.git
+[submodule "bundle.available/nerdcommenter"]
+	path = bundle.available/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle.available/fugitive"]
+	path = bundle.available/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "bundle.available/tagbar"]
+	path = bundle.available/tagbar
+	url = git://github.com/majutsushi/tagbar.git
+[submodule "bundle.available/delimitmate"]
+	path = bundle.available/delimitmate
+	url = git://github.com/Raimondi/delimitMate.git

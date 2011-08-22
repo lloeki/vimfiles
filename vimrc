@@ -126,6 +126,19 @@ let mapleader = ','
 "let g:CommandTAcceptSelectionTabMap='<CR>'
 "let g:CommandTAcceptSelectionMap='<C-r>'
 
+"SuperTab options
+let g:SuperTabDefaultCompletionType = "context"
+
+"OmniComplete
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+set completeopt+=longest
+
+"TagBar
+let g:tagbar_usearrows = 1
+nnoremap <leader>l :TagbarToggle<CR>
+
+
 "xterm control+arrows
 map [1;5D <C-Left>
 map! [1;5D <C-Left>

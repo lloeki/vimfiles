@@ -72,7 +72,8 @@ if has('syntax') && (&t_Co > 2)
 endif
 
 "enable filetype detection
-"filetype on
+filetype off "workaround for correct ftdetect handling
+filetype on
 filetype plugin on
 filetype indent on
 

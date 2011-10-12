@@ -1,12 +1,19 @@
 " lloeki's vimrc
 
-set nocompatible
-
 "bundle loading via pathogen
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+let g:pathogen_disabled = ['command-t']
 
+filetype off
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect()
+syntax on
+filetype plugin indent on
+
+set nocompatible
 scriptencoding "utf-8"
+
+"security measure
+set modelines=0
 
 " prevent .netrwhist creation
 let g:netrw_dirhistmax = 0
@@ -65,16 +72,6 @@ endif
 "        let &t_Sb="\e[4%dm"
 "    endif
 "endif
-
-"enable syntax highlighting if term supports enough colors
-if has('syntax') && (&t_Co > 2)
-    syntax on
-endif
-
-"enable filetype detection
-"filetype on
-filetype plugin on
-filetype indent on
 
 "ignore some files
 set wildignore+=*.o,*.obj,.git,.svn,*.pyc
@@ -149,11 +146,16 @@ map [5D <Home>
 map! [5D <Home>
 map [5C <End>
 map! [5C <End>
-"Terminal.app option+arrows
+"Lion Terminal.app option+arrows
 map b <M-Left>
 map! b <M-Left>
 map f <M-Right>
 map! f <M-Right>
+"Terminal.app option+arrows
+map [1;3D <M-Left>
+map! [1;3D <M-Left>
+map [1;3C <M-Right>
+map! [1;3C <M-Right>
 
 " make meta move on words like control
 map <M-Left> <C-Left>

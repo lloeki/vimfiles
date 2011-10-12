@@ -1,3 +1,3 @@
 #!/bin/sh
 
-cd ~/.vim/bundle.available/command-t/ruby/command-t && /usr/bin/ruby extconf.rb && make
+cd ~/.vim/bundle/command-t/ruby/command-t && /usr/bin/ruby extconf.rb && make

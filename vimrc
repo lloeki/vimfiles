@@ -1,7 +1,7 @@
 " lloeki's vimrc
 
 "bundle loading via pathogen
-let g:pathogen_disabled = ['command-t']
+let g:pathogen_disabled = []
 
 filetype off
 runtime bundle/vim-pathogen/autoload/pathogen.vim

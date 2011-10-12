@@ -109,8 +109,9 @@ autocmd FileType make set noexpandtab   "makefiles need tabs
 autocmd FileType ruby set softtabstop=2 shiftwidth=2
 autocmd FileType eruby set softtabstop=2 shiftwidth=2
 
-"swap files
-"set directory=/var/tmp,.
+"swap/undo files
+set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
+set undodir=~/.vim/tmp/undo//,.
 
 "buffer management
 set swb=usetab      "make :sb <filename> go to tabs too
@@ -167,6 +168,8 @@ map! <M-Right> <C-Right>
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 "match OverLength /\%81v.\+/
 
+" conserve undo info
+set undofile
 
 " restore last known cursor position
 function! ResCur()

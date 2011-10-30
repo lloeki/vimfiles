@@ -119,6 +119,9 @@ set swb=usetab      "make :sb <filename> go to tabs too
 "key mappings
 let mapleader = ','
 
+"Ack
+nnoremap <leader>a :Ack
+
 "Command-T options
 "let g:CommandTMatchWindowReverse=1
 "let g:CommandTAcceptSelectionTabMap='<CR>'

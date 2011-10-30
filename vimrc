@@ -111,7 +111,7 @@ autocmd FileType eruby set softtabstop=2 shiftwidth=2
 
 "swap/undo files
 set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
-set undodir=~/.vim/tmp/undo//,.
+"set undodir=~/.vim/tmp/undo//,.
 
 "buffer management
 set swb=usetab      "make :sb <filename> go to tabs too
@@ -172,7 +172,7 @@ map! <M-Right> <C-Right>
 "match OverLength /\%81v.\+/
 
 " conserve undo info
-set undofile
+"set undofile
 
 " restore last known cursor position
 function! ResCur()

@@ -119,6 +119,9 @@ set swb=usetab      "make :sb <filename> go to tabs too
 "key mappings
 let mapleader = ','
 
+"session
+nnoremap <leader>s :mksession!<CR>
+
 "Ack
 nnoremap <leader>a :Ack
 

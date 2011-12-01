@@ -119,6 +119,8 @@ set swb=usetab      "make :sb <filename> go to tabs too
 "key mappings
 let mapleader = ','
 
+map <leader>R :source ~/.vimrc
+
 "session
 nnoremap <leader>s :mksession!<CR>
 

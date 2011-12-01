@@ -121,6 +121,11 @@ let mapleader = ','
 
 map <leader>R :source ~/.vimrc
 
+"coffee
+vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
+map <leader>c :CoffeeCompile<CR>
+command -nargs=1 C CoffeeCompile | :<args>
+
 "session
 nnoremap <leader>s :mksession!<CR>
 

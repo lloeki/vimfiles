@@ -1,10 +1,10 @@
 This is my vim setup with convenience scripts for easy
 deployment on multiple computers.
 
-- git clone vimfiles.git
-- cd vimfiles
-- make
-- enjoy.
+Here's how I set up a new account:
 
-It both works standalone and integrates into my dotfiles repo.
+- git clone https://lloeki@github.com/lloeki/vimfiles.git
+- cd vimfiles
+- ./setup.sh
+- enjoy.
 

@@ -119,7 +119,9 @@ set swb=usetab      "make :sb <filename> go to tabs too
 "key mappings
 let mapleader = ','
 
-map <leader>R :source ~/.vimrc
+map <leader>R :source ~/.vimrc<CR>
+map <leader>t :CtrlP<CR>
+map <leader>b :CtrlPBuffer<CR>
 
 "coffee
 vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
@@ -130,7 +132,7 @@ command -nargs=1 C CoffeeCompile | :<args>
 nnoremap <leader>s :mksession!<CR>
 
 "Ack
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack<SPACE>
 
 "Command-T options
 "let g:CommandTMatchWindowReverse=1

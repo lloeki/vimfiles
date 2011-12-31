@@ -39,12 +39,12 @@ if has('gui_running') "GUI specific settings
 else "non-GUI
     set showtabline=1           "automatic tab bar
     set mouse=a                 "mouse support
+    set background=dark
 endif
 
 "color theme
 "colorscheme desert
 "colorscheme delek
-set background=light
 let g:solarized_termcolors=16
 let g:solarized_visibility="low"
 let g:solarized_termtrans=1

@@ -224,3 +224,11 @@ augroup resCur
   endif
 augroup END
 
+" restore session if Session.vim exists
+function! RestoreSession()
+  if argc() == 0 && filereadable("Session.vim") "vim called without arguments
+    execute 'source Session.vim'
+  end
+endfunction
+autocmd VimEnter * call RestoreSession()
+

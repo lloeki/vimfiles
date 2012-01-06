@@ -29,6 +29,9 @@ if has('gui_running') "GUI specific settings
     "no toolbar
     set guioptions-=T
 
+    "no tear-off menus
+    set guioptions-=t
+
     set background=light
     "set transparency=8
 

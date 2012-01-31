@@ -87,7 +87,7 @@ set showmode        "display current mode at the bottom
 set showcmd         "display command info at the bottom
 set ruler           "display coordinates and relative position at the bottom
 set number          "show line numbers in left margin
-set laststatus=1
+set laststatus=2
 
 
 " search tweaks

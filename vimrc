@@ -32,6 +32,9 @@ if has('gui_running') "GUI specific settings
     "no tear-off menus
     set guioptions-=t
 
+    "no scrollbars
+    set guioptions-=Lrb
+
     set background=light
     "set transparency=8
 

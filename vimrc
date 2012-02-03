@@ -1,7 +1,7 @@
 " lloeki's vimrc
 
 "bundle loading via pathogen
-let g:pathogen_disabled = ['pyflakes-vim', 'vim-matchit', 'vim-repeat', 'closetag', 'command-t']
+let g:pathogen_disabled = ['matchit', 'repeat', 'closetag']
 
 filetype off
 runtime bundle/pathogen/autoload/pathogen.vim

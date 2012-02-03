@@ -125,6 +125,9 @@ set swb=usetab      "make :sb <filename> go to tabs too
 "key mappings
 let mapleader = ','
 
+set hlsearch
+map <leader>s :nohlsearch<CR>
+
 map <leader>R :source ~/.vimrc<CR>
 map <leader>t :CtrlP<CR>
 map <leader>b :CtrlPBuffer<CR>
@@ -135,7 +138,7 @@ map <leader>c :CoffeeCompile<CR>
 command -nargs=1 C CoffeeCompile | :<args>
 
 "session
-nnoremap <leader>s :mksession!<CR>
+nnoremap <leader>S :mksession!<CR>
 
 "Ack
 nnoremap <leader>a :Ack<SPACE>

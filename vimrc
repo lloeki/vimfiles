@@ -4,7 +4,7 @@
 let g:pathogen_disabled = ['pyflakes-vim', 'vim-matchit', 'vim-repeat', 'closetag', 'command-t']
 
 filetype off
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect()
 syntax on
 filetype plugin indent on

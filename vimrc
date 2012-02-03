@@ -1,7 +1,7 @@
 " lloeki's vimrc
 
 "bundle loading via pathogen
-let g:pathogen_disabled = ['matchit', 'repeat', 'closetag']
+let g:pathogen_disabled = ['closetag']
 
 filetype off
 runtime bundle/pathogen/autoload/pathogen.vim

@@ -45,7 +45,7 @@ if has('gui_running') "GUI specific settings
 else "non-GUI
     set showtabline=1           "automatic tab bar
     set mouse=a                 "mouse support
-    set background=dark
+    set background=light
 endif
 
 "color theme

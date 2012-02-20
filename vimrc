@@ -176,10 +176,10 @@ map! [5D <Home>
 map [5C <End>
 map! [5C <End>
 "Lion Terminal.app option+arrows
-map b <M-Left>
-map! b <M-Left>
-map f <M-Right>
-map! f <M-Right>
+"map b <M-Left>
+"map! b <M-Left>
+"map f <M-Right>
+"map! f <M-Right>
 "Terminal.app option+arrows
 map [1;3D <M-Left>
 map! [1;3D <M-Left>

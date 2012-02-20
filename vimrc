@@ -54,7 +54,8 @@ endif
 let g:solarized_termcolors=16
 let g:solarized_visibility="low"
 let g:solarized_termtrans=1
-colorscheme solarized
+"colorscheme solarized
+colorscheme zenburn
 
 "special case fixes
 if &term =~ "vt100"

@@ -62,11 +62,17 @@ if &term =~ "vt100"
 "    let &term="xterm"
 endif
 
-if &term =~ "screen"
-     "fix for cursor keys in e.g Command-T
-     "the one described in :help vt100-cursor-keys does not work
-     let &term="xterm"
-endif
+"if &term =~ "screen"
+"     "fix for cursor keys in e.g Command-T
+"     "the one described in :help vt100-cursor-keys does not work
+"     let &term="xterm"
+"endif
+
+"if &term =~ "screen-256color"
+"    let &t_Co=256
+"    let &t_AB="\e[48;5;%dm"
+"    let &t_AF="\e[38;5;%dm"
+"endif
 
 "if &term =~ "xterm"
 "    if has("terminfo")

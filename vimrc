@@ -13,7 +13,7 @@ set nocompatible
 scriptencoding "utf-8"
 
 "security measure
-set modelines=0
+"set modelines=0
 
 " prevent .netrwhist creation
 let g:netrw_dirhistmax = 0

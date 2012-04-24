@@ -22,6 +22,12 @@ let g:netrw_dirhistmax = 0
 set backspace=indent,eol,start
 
 if has('gui_running') "GUI specific settings
+    "key bindings
+    "map <D-S-left> :macaction _cycleWindowsBackwards:<CR>
+    "map <D-S-right> :macaction _cycleWindows:<CR>
+    map <D-S-left> :tabprevious<CR>
+    map <D-S-right> :tabnext<CR>
+
     
     "better font
     "set guifont=Menlo:h12
@@ -33,7 +39,9 @@ if has('gui_running') "GUI specific settings
     set guioptions-=t
 
     "no scrollbars
-    set guioptions-=Lrb
+    set guioptions-=L
+    set guioptions-=r
+    set guioptions-=b
 
     set background=light
     "set transparency=8
@@ -134,6 +142,8 @@ let mapleader = ','
 
 set hlsearch
 map <leader>s :nohlsearch<CR>
+
+map <leader>q :cw<CR>
 
 map <leader>R :source ~/.vimrc<CR>
 map <leader>t :CtrlP<CR>

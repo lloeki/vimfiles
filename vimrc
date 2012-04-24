@@ -43,7 +43,7 @@ if has('gui_running') "GUI specific settings
     set guioptions-=r
     set guioptions-=b
 
-    set background=light
+    "set background=light
     "set transparency=8
 
     "window size
@@ -53,7 +53,7 @@ if has('gui_running') "GUI specific settings
 else "non-GUI
     set showtabline=1           "automatic tab bar
     set mouse=a                 "mouse support
-    set background=light
+    "set background=light
 endif
 
 "color theme

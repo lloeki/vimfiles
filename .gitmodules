@@ -58,3 +58,6 @@
 [submodule "bundle/zenburn"]
 	path = bundle/zenburn
 	url = https://github.com/jnurmine/Zenburn.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git

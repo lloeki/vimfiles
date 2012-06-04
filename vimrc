@@ -43,8 +43,10 @@ if has('gui_running') "GUI specific settings
     set guioptions-=r
     set guioptions-=b
 
-    "set background=light
-    "set transparency=8
+    let g:solarized_visibility="low"
+    colorscheme solarized
+    set background=light
+    set transparency=4
 
     "window size
     set columns=90
@@ -53,17 +55,12 @@ if has('gui_running') "GUI specific settings
 else "non-GUI
     set showtabline=1           "automatic tab bar
     set mouse=a                 "mouse support
-    "set background=light
+    let g:solarized_visibility="low"
+    let g:solarized_termcolors=16
+    let g:solarized_termtrans=1
+    colorscheme solarized
+    set background=dark
 endif
-
-"color theme
-"colorscheme desert
-"colorscheme delek
-let g:solarized_termcolors=16
-let g:solarized_visibility="low"
-let g:solarized_termtrans=1
-"colorscheme solarized
-colorscheme zenburn
 
 "special case fixes
 if &term =~ "vt100"

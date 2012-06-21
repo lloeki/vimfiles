@@ -64,3 +64,6 @@
 [submodule "bundle/golang"]
 	path = bundle/golang
 	url = https://github.com/jnwhiteh/vim-golang.git
+[submodule "bundle/argtextobj"]
+	path = bundle/argtextobj
+	url = https://github.com/vim-scripts/argtextobj.vim

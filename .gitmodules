@@ -76,3 +76,6 @@
 [submodule "bundle/endwise"]
 	path = bundle/endwise
 	url = https://github.com/tpope/vim-endwise.git
+[submodule "bundle/textile"]
+	path = bundle/textile
+	url = https://github.com/timcharper/textile.vim.git

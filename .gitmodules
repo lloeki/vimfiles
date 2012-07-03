@@ -70,9 +70,6 @@
 [submodule "bundle/ragtag"]
 	path = bundle/ragtag
 	url = https://github.com/tpope/vim-ragtag.git
-[submodule "bundle/gem-ctags"]
-	path = bundle/gem-ctags
-	url = https://github.com/tpope/gem-ctags
 [submodule "bundle/bundler"]
 	path = bundle/bundler
 	url = https://github.com/tpope/vim-bundler.git

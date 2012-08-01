@@ -44,9 +44,7 @@ if has('gui_running') "GUI specific settings
     set guioptions-=b
 
     let g:solarized_visibility="low"
-    colorscheme solarized
-    set background=light
-    set transparency=4
+    colorscheme zenburn
 
     "window size
     set columns=90
@@ -55,11 +53,7 @@ if has('gui_running') "GUI specific settings
 else "non-GUI
     set showtabline=1           "automatic tab bar
     set mouse=a                 "mouse support
-    let g:solarized_visibility="low"
-    let g:solarized_termcolors=16
-    let g:solarized_termtrans=1
-    colorscheme solarized
-    set background=dark
+    colorscheme zenburn
 endif
 
 "special case fixes

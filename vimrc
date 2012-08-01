@@ -121,6 +121,9 @@ set showmatch               "highlight both matching parentheses
 set listchars=eol:¬,tab:→\ ,nbsp:•,trail:·
 set list
 
+"OS clipboard integration
+set clipboard+=unnamed
+
 "filetype specific settings
 autocmd FileType make set noexpandtab   "makefiles need tabs
 autocmd FileType ruby set softtabstop=2 shiftwidth=2

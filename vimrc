@@ -55,6 +55,10 @@ else "non-GUI
     set mouse=a                 "mouse support
     let g:zenburn_force_dark_Background = 1
     colorscheme zenburn
+    "use terminal background
+    hi Normal ctermbg=none
+    hi todo ctermbg=none
+    hi statement ctermbg=none
 endif
 
 "special case fixes

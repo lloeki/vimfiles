@@ -1,5 +1,5 @@
 #!/bin/sh
 
-ln -sfn "$(pwd)" "$HOME/.vim"
-ln -sfn "$HOME/.vim/vimrc" "$HOME/.vimrc"
+[ $(pwd) = "$HOME/.vim" ] || ln -sfn "$(pwd)" "$HOME/.vim"
+ln -sfn "$HOME/.vim/rc" "$HOME/.vimrc"
 

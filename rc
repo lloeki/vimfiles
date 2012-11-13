@@ -145,7 +145,7 @@ map <leader>s :nohlsearch<CR>
 map <leader>q :cw<CR>
 
 map <leader>R :source ~/.vimrc<CR>
-map <leader>t :CtrlP<CR>
+map <leader>t :NERDTreeToggle<CR>
 map <leader>b :CtrlPBuffer<CR>
 
 "coffee
@@ -260,3 +260,4 @@ function! RestoreSession()
 endfunction
 autocmd VimEnter * call RestoreSession()
 
+" vim: ft=vim

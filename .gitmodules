@@ -88,3 +88,6 @@
 [submodule "bundle/ls"]
 	path = bundle/ls
 	url = https://github.com/gkz/vim-ls.git
+[submodule "bundle/zencoding"]
+	path = bundle/zencoding
+	url = https://github.com/mattn/zencoding-vim.git

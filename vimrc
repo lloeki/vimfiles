@@ -13,7 +13,7 @@ set nocompatible
 scriptencoding "utf-8"
 
 "security measure
-"set modelines=0
+set modelines=0
 
 " prevent .netrwhist creation
 let g:netrw_dirhistmax = 0
@@ -21,36 +21,7 @@ let g:netrw_dirhistmax = 0
 "make sure backspace behaves
 set backspace=indent,eol,start
 
-if has('gui_running') "GUI specific settings
-    "key bindings
-    "map <D-S-left> :macaction _cycleWindowsBackwards:<CR>
-    "map <D-S-right> :macaction _cycleWindows:<CR>
-    map <D-S-left> :tabprevious<CR>
-    map <D-S-right> :tabnext<CR>
-
-    
-    "better font
-    "set guifont=Menlo:h12
-    
-    "no toolbar
-    set guioptions-=T
-
-    "no tear-off menus
-    set guioptions-=t
-
-    "no scrollbars
-    set guioptions-=L
-    set guioptions-=r
-    set guioptions-=b
-
-    let g:solarized_visibility="low"
-    colorscheme solarized
-
-    "window size
-    set columns=90
-    set lines=30
-
-else "non-GUI
+if !has('gui_running') "
     set showtabline=1           "automatic tab bar
     set mouse=a                 "mouse support
     let g:zenburn_force_dark_Background = 1
@@ -63,37 +34,10 @@ else "non-GUI
     hi statement ctermbg=none
 endif
 
-"special case fixes
-if &term =~ "vt100"
-"    let &term="xterm"
-endif
-
-"if &term =~ "screen"
-"     "fix for cursor keys in e.g Command-T
-"     "the one described in :help vt100-cursor-keys does not work
-"     let &term="xterm"
-"endif
-
-"if &term =~ "screen-256color"
-"    let &t_Co=256
-"    let &t_AB="\e[48;5;%dm"
-"    let &t_AF="\e[38;5;%dm"
-"endif
-
-"if &term =~ "xterm"
-"    if has("terminfo")
-"        let &t_Co=8
-"        let &t_Sf="\e[3%p1%dm"
-"        let &t_Sb="\e[4%p1%dm"
-"    else
-"        let &t_Co=8
-"        let &t_Sf="\e[3%dm"
-"        let &t_Sb="\e[4%dm"
-"    endif
-"endif
-
 "ignore some files
-set wildignore+=*.o,*.obj,.git,.svn,*.pyc
+set wildignore+=*.o,*.obj,*.pyc
+set wildignore+=.git,.svn
+set wildignore+=env,venv*
 
 "display more info
 set showmode        "display current mode at the bottom
@@ -127,10 +71,10 @@ set list
 set clipboard+=unnamed
 
 "filetype specific settings
-autocmd FileType make set noexpandtab   "makefiles need tabs
-autocmd FileType ruby set softtabstop=2 shiftwidth=2
-autocmd FileType eruby set softtabstop=2 shiftwidth=2
-autocmd FileType coffee set softtabstop=4 shiftwidth=4
+autocmd FileType make    set noexpandtab   "makefiles need tabs
+autocmd FileType ruby    set softtabstop=2 shiftwidth=2
+autocmd FileType eruby   set softtabstop=2 shiftwidth=2
+autocmd FileType coffee  set softtabstop=4 shiftwidth=4
 
 "swap/undo files
 set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
@@ -143,7 +87,7 @@ set swb=usetab      "make :sb <filename> go to tabs too
 let mapleader = ','
 
 set hlsearch
-map <leader>s :nohlsearch<CR>
+map <leader>cs :nohlsearch<CR>
 
 map <leader>q :cw<CR>
 
@@ -152,8 +96,8 @@ map <leader>t :NERDTreeToggle<CR>
 map <leader>b :CtrlPBuffer<CR>
 
 "coffee
-vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
-map <leader>c :CoffeeCompile<CR>
+vmap <leader>cc <esc>:'<,'>:CoffeeCompile<CR>
+map <leader>cc :CoffeeCompile<CR>
 command -nargs=1 C CoffeeCompile | :<args>
 
 "session

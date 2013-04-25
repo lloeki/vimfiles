@@ -75,6 +75,7 @@ autocmd FileType make    set noexpandtab   "makefiles need tabs
 autocmd FileType ruby    set softtabstop=2 shiftwidth=2
 autocmd FileType eruby   set softtabstop=2 shiftwidth=2
 autocmd FileType coffee  set softtabstop=4 shiftwidth=4
+au      BufRead,BufNewFile Guardfile setfiletype ruby
 
 "notify line length > 80
 function HighlightOverLength()

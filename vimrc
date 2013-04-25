@@ -1,11 +1,11 @@
 " lloeki's vimrc
 
-"bundle loading via pathogen
-let g:pathogen_disabled = []
-
+"bundle loading via vundle
 filetype off
-runtime bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+source ~/.vim/bundle.vim
+
 syntax on
 filetype plugin indent on
 

@@ -114,14 +114,6 @@ nnoremap <leader>S :mksession!<CR>
 "Ack
 nnoremap <leader>a :Ack<SPACE>
 
-"Powerline
-"let g:Powerline_symbols = "unicode"
-
-"Command-T options
-"let g:CommandTMatchWindowReverse=1
-"let g:CommandTAcceptSelectionTabMap='<CR>'
-"let g:CommandTAcceptSelectionMap='<C-r>'
-
 "SuperTab options
 let g:SuperTabDefaultCompletionType = "context"
 

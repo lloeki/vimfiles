@@ -76,6 +76,13 @@ autocmd FileType ruby    set softtabstop=2 shiftwidth=2
 autocmd FileType eruby   set softtabstop=2 shiftwidth=2
 autocmd FileType coffee  set softtabstop=4 shiftwidth=4
 
+"notify line length > 80
+function HighlightOverLength()
+    highlight OverLength ctermbg=blue ctermfg=white guibg=#59292
+    match OverLength /\%81v.\+/
+endfunction
+autocmd FileType ruby    call HighlightOverLength()
+
 "swap/undo files
 set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
 "set undodir=~/.vim/tmp/undo//,.

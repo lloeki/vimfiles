@@ -1,3 +1,9 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
 Bundle 'gmarik/vundle'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/argtextobj.vim'
@@ -30,3 +36,6 @@ Bundle 'majutsushi/tagbar'
 Bundle 'timcharper/textile.vim'
 Bundle 'jnurmine/Zenburn'
 Bundle 'mattn/zencoding-vim'
+
+filetype plugin indent on
+syntax on

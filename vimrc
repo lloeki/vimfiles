@@ -1,15 +1,8 @@
 " lloeki's vimrc
 
 "bundle loading via vundle
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-source ~/.vim/bundle.vim
+source ~/.vim/bundles.vim
 
-syntax on
-filetype plugin indent on
-
-set nocompatible
 scriptencoding "utf-8"
 
 "security measure

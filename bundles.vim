@@ -37,6 +37,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'timcharper/textile.vim'
 Bundle 'jnurmine/Zenburn'
 Bundle 'mattn/zencoding-vim'
+Bundle 'Lokaltog/vim-distinguished'
 
 filetype plugin indent on
 syntax on

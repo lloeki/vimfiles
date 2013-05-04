@@ -17,14 +17,19 @@ set backspace=indent,eol,start
 if !has('gui_running') "
     set showtabline=1           "automatic tab bar
     set mouse=a                 "mouse support
-    let g:zenburn_force_dark_Background = 1
-    colorscheme zenburn
+    "let g:zenburn_force_dark_Background = 1
+    "colorscheme zenburn
+    colorscheme candy
+    "colorscheme grb256
+    "colorscheme github
+    "colorscheme codeschool
+    "colorscheme distinguished
     "let g:solarized_visibility="low"
     "colorscheme solarized
     "use terminal background
-    hi Normal ctermbg=none
-    hi todo ctermbg=none
-    hi statement ctermbg=none
+    "hi Normal ctermbg=none
+    "hi todo ctermbg=none
+    "hi statement ctermbg=none
 endif
 
 "ignore some files
@@ -55,7 +60,7 @@ set smarttab                "tab insertion actually indents on line start
 set autoindent              "new line copies indent from above
 
 "feedback
-set cursorline              "highlight current line
+"set cursorline              "highlight current line
 set showmatch               "highlight both matching parentheses
 set listchars=eol:¬,tab:→\ ,nbsp:•,trail:·
 set list

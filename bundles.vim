@@ -1,4 +1,5 @@
 set nocompatible
+set shell=bash
 filetype on
 filetype off
 

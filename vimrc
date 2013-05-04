@@ -88,7 +88,7 @@ set swb=usetab      "make :sb <filename> go to tabs too
 let mapleader = ','
 
 set hlsearch
-map <leader>cs :nohlsearch<CR>
+map <leader>c :nohlsearch<CR>
 
 map <leader>q :cw<CR>
 

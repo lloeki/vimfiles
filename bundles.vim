@@ -38,6 +38,7 @@ Bundle 'timcharper/textile.vim'
 Bundle 'jnurmine/Zenburn'
 Bundle 'mattn/zencoding-vim'
 Bundle 'Lokaltog/vim-distinguished'
+Bundle 'slim-template/vim-slim'
 
 filetype plugin indent on
 syntax on

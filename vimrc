@@ -76,12 +76,16 @@ autocmd FileType coffee  set softtabstop=4 shiftwidth=4
 au      BufRead,BufNewFile Guardfile setfiletype ruby
 "let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
-"notify line length > 80
-function HighlightOverLength()
+"notify line over length
+function HighlightOverLength(len)
     highlight OverLength ctermbg=blue ctermfg=white guibg=#59292
-    match OverLength /\%81v.\+/
+    execute 'match OverLength /\%'.(a:len+1).'v.\+/'
 endfunction
-autocmd FileType ruby    call HighlightOverLength()
+autocmd FileType vim      call HighlightOverLength(79)
+autocmd FileType ruby     call HighlightOverLength(79)
+autocmd FileType slim     call HighlightOverLength(79)
+autocmd FileType python   call HighlightOverLength(79)
+autocmd FileType mdown    call HighlightOverLength(79)
 
 "swap/undo files
 set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.

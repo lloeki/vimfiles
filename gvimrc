@@ -14,6 +14,8 @@ nnoremap <D-p>        :CtrlP<CR>
 " better font
 set guifont=Menlo:h12
 
+set noballooneval
+
 endif  " OSX
 
 " no toolbar

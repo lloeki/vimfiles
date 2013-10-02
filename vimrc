@@ -74,7 +74,7 @@ autocmd FileType ruby    set softtabstop=2 shiftwidth=2
 autocmd FileType eruby   set softtabstop=2 shiftwidth=2
 autocmd FileType coffee  set softtabstop=4 shiftwidth=4
 au      BufRead,BufNewFile Guardfile setfiletype ruby
-"let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 "notify line over length
 function HighlightOverLength(len)

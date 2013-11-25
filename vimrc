@@ -127,8 +127,8 @@ let g:rubycomplete_classes_in_global = 1
 set completeopt+=longest
 
 "TagBar
-let g:tagbar_usearrows = 1
-nnoremap <leader>l :TagbarToggle<CR>
+"let g:tagbar_usearrows = 1
+"nnoremap <leader>l :TagbarToggle<CR>
 
 
 "xterm control+arrows

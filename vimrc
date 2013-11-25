@@ -14,18 +14,21 @@ let g:netrw_dirhistmax = 0
 "make sure backspace behaves
 set backspace=indent,eol,start
 
+let g:solarized_visibility="low"
 if !has('gui_running') "
     set showtabline=1           "automatic tab bar
     set mouse=a                 "mouse support
+    "set background=dark
     "let g:zenburn_force_dark_Background = 1
     "colorscheme zenburn
-    colorscheme candy
+    "colorscheme candy
     "colorscheme grb256
     "colorscheme github
     "colorscheme codeschool
     "colorscheme distinguished
-    "let g:solarized_visibility="low"
-    "colorscheme solarized
+    "let g:solarized_termtrans=0
+    "let g:solarized_termcolors=16
+    colorscheme solarized
     "use terminal background
     "hi Normal ctermbg=none
     "hi todo ctermbg=none
@@ -60,7 +63,7 @@ set smarttab                "tab insertion actually indents on line start
 set autoindent              "new line copies indent from above
 
 "feedback
-"set cursorline              "highlight current line
+set cursorline              "highlight current line
 set showmatch               "highlight both matching parentheses
 set listchars=eol:¬,tab:→\ ,nbsp:•,trail:·
 set list

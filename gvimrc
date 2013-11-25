@@ -30,11 +30,11 @@ set guioptions-=r
 set guioptions-=b
 
 "let g:solarized_visibility="low"
-"colorscheme solarized
+colorscheme solarized
 "let g:zenburn_force_dark_Background = 1
 "colorscheme zenburn
 "colorscheme codeschool
-colorscheme github
+"colorscheme github
 "colorscheme twilight
 "colorscheme candy
 

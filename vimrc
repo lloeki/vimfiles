@@ -14,6 +14,10 @@ let g:netrw_dirhistmax = 0
 "make sure backspace behaves
 set backspace=indent,eol,start
 
+"powerline/airline font
+"let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
+
 let g:solarized_visibility="low"
 if !has('gui_running') "
     set showtabline=1           "automatic tab bar

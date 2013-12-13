@@ -14,6 +14,11 @@ let g:netrw_dirhistmax = 0
 "make sure backspace behaves
 set backspace=indent,eol,start
 
+"shorten esc timeout
+set timeout
+set timeoutlen=1000
+set ttimeoutlen=50
+
 "powerline/airline font
 "let g:Powerline_symbols = 'fancy'
 let g:airline_powerline_fonts = 1
@@ -139,31 +144,31 @@ set completeopt+=longest
 
 
 "xterm control+arrows
-map [1;5D <C-Left>
-map! [1;5D <C-Left>
-map [1;5C <C-Right>
-map! [1;5C <C-Right>
+"map [1;5D <C-Left>
+"map! [1;5D <C-Left>
+"map [1;5C <C-Right>
+"map! [1;5C <C-Right>
 "Terminal.app control+arrows
-map [5D <Home>
-map! [5D <Home>
-map [5C <End>
-map! [5C <End>
+"map [5D <Home>
+"map! [5D <Home>
+"map [5C <End>
+"map! [5C <End>
 "Lion Terminal.app option+arrows
 "map b <M-Left>
 "map! b <M-Left>
 "map f <M-Right>
 "map! f <M-Right>
 "Terminal.app option+arrows
-map [1;3D <M-Left>
-map! [1;3D <M-Left>
-map [1;3C <M-Right>
-map! [1;3C <M-Right>
+"map [1;3D <M-Left>
+"map! [1;3D <M-Left>
+"map [1;3C <M-Right>
+"map! [1;3C <M-Right>
 
 " make meta move on words like control
-map <M-Left> <C-Left>
-map! <M-Left> <C-Left>
-map <M-Right> <C-Right>
-map! <M-Right> <C-Right>
+"map <M-Left> <C-Left>
+"map! <M-Left> <C-Left>
+"map <M-Right> <C-Right>
+"map! <M-Right> <C-Right>
 
 " highlight background for >80
 "highlight OverLength ctermbg=red ctermfg=white guibg=#592929

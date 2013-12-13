@@ -247,6 +247,23 @@ function! RestoreSession()
 endfunction
 autocmd VimEnter * call RestoreSession()
 
+" relative line numbers
+"function! NumberToggle()
+"  if(&relativenumber == 1)
+"    set norelativenumber
+"  else
+"    set relativenumber
+"  endif
+"endfunc
+"
+"nnoremap <C-n> :call NumberToggle()<cr>
+"
+":au FocusLost * :set norelativenumber
+":au FocusGained * :set relativenumber
+"
+"autocmd InsertEnter * :set norelativenumber
+"autocmd InsertLeave * :set relativenumber
+
 "matchit
 source $VIMRUNTIME/macros/matchit.vim
 

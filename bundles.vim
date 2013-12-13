@@ -23,6 +23,7 @@ Bundle 'scrooloose/nerdtree'
 "Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
 "Bundle 'majutsushi/tagbar'
+"Bundle 'airblade/vim-gitgutter'
 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'vim-scripts/glsl.vim'

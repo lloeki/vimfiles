@@ -46,6 +46,11 @@ let g:airline_symbols.whitespace = 'Ξ'
 "let g:airline_symbols.readonly = '⭤'
 "let g:airline_symbols.linenr = '⭡'
 
+"gitgutter
+"let g:gitgutter_highlight_lines = 1
+let g:gitgutter_escape_grep = 1
+let g:gitgutter_diff_args = '-w'
+"let g:gitgutter_signs = 0
 
 let g:solarized_visibility="low"
 if !has('gui_running') "

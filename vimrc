@@ -223,4 +223,7 @@ function! RestoreSession()
 endfunction
 autocmd VimEnter * call RestoreSession()
 
+"matchit
+source $VIMRUNTIME/macros/matchit.vim
+
 " vim: ft=vim

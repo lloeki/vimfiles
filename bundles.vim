@@ -16,6 +16,7 @@ Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-fugitive'
 Bundle 'rking/ag.vim'
 
+Bundle 'ciaranm/securemodelines'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Lokaltog/vim-powerline'
 Bundle 'bling/vim-airline'

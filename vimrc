@@ -7,6 +7,8 @@ scriptencoding "utf-8"
 
 "security measure
 set modelines=0
+let g:secure_modelines_leave_modeline=1
+let g:secure_modelines_verbose=1
 
 " prevent .netrwhist creation
 let g:netrw_dirhistmax = 0

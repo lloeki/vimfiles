@@ -156,8 +156,8 @@ command -nargs=1 C CoffeeCompile | :<args>
 "session
 nnoremap <leader>S :mksession!<CR>
 
-"Ack
-nnoremap <leader>a :Ack<SPACE>
+"Ag
+nnoremap <leader>a :Ag<SPACE>
 
 "SuperTab options
 let g:SuperTabDefaultCompletionType = "context"

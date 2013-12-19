@@ -14,7 +14,7 @@ Bundle 'altercation/vim-colors-solarized'
 
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-fugitive'
-Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 
 Bundle 'kien/ctrlp.vim'
 "Bundle 'Lokaltog/vim-powerline'

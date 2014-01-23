@@ -274,4 +274,7 @@ autocmd VimEnter * call RestoreSession()
 "matchit
 source $VIMRUNTIME/macros/matchit.vim
 
+"crontab -e
+au! BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
+
 " vim: ft=vim

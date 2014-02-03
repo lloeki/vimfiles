@@ -29,12 +29,15 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=b
 
+set background=light
+"let g:airline_theme="light"
+let g:airline_theme="sol"
 "let g:solarized_visibility="low"
-colorscheme solarized
+"colorscheme solarized
 "let g:zenburn_force_dark_Background = 1
 "colorscheme zenburn
 "colorscheme codeschool
-"colorscheme github
+colorscheme github
 "colorscheme twilight
 "colorscheme candy
 

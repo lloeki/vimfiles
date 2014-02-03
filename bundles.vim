@@ -10,7 +10,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'altercation/vim-colors-solarized'
 "Bundle 'Lokaltog/vim-distinguished'
-"Bundle 'jnurmine/Zenburn'
+Bundle 'jnurmine/Zenburn'
 
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-fugitive'

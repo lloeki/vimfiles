@@ -18,6 +18,9 @@ set noballooneval
 
 endif  " OSX
 
+" no menu
+set guioptions-=m
+
 " no toolbar
 set guioptions-=T
 

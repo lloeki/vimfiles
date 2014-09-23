@@ -120,6 +120,11 @@ au      BufRead,BufNewFile Guardfile setfiletype ruby
 au      BufRead,BufNewFile *.skim setfiletype slim
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
+if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
+    setfiletype rfc
+    set textwidth=72
+endif
+
 "notify line over length
 function HighlightOverLength(len)
     highlight OverLength ctermbg=blue ctermfg=white guibg=#59292

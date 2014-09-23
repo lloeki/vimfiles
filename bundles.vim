@@ -40,6 +40,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'slim-template/vim-slim'
 Bundle 'jboyens/vim-protobuf'
 Bundle 'dag/vim-fish'
+Bundle 'vim-scripts/rfc-syntax'
 
 Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'michaeljsmith/vim-indent-object'

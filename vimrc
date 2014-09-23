@@ -109,7 +109,7 @@ set listchars=eol:¬,tab:→\ ,nbsp:•,trail:·
 set list
 
 "OS clipboard integration
-set clipboard^=unnamedplus
+set clipboard^=unnamed
 
 "filetype specific settings
 autocmd FileType make    set noexpandtab   "makefiles need tabs

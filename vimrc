@@ -118,6 +118,7 @@ autocmd FileType eruby   set softtabstop=2 shiftwidth=2
 autocmd FileType coffee  set softtabstop=4 shiftwidth=4
 au      BufRead,BufNewFile Guardfile setfiletype ruby
 au      BufRead,BufNewFile *.skim setfiletype slim
+au      BufRead,BufNewFile *.opal setfiletype ruby
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'

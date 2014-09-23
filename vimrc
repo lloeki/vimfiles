@@ -155,6 +155,8 @@ map <leader>q :cw<CR>
 map <leader>R :source ~/.vimrc<CR>
 map <leader>t :NERDTreeToggle<CR>
 map <leader>b :CtrlPBuffer<CR>
+map <leader>r :CtrlPTag<CR>
+map <leader>p :CtrlP<CR>
 
 "coffee
 vmap <leader>cc <esc>:'<,'>:CoffeeCompile<CR>

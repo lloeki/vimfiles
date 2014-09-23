@@ -60,7 +60,7 @@ if !has('gui_running') "
     set mouse=a                 "mouse support
     set background=dark
     let g:zenburn_force_dark_Background = 1
-    colorscheme zenburn
+    "colorscheme zenburn
     "colorscheme candy
     "colorscheme grb256
     "colorscheme github
@@ -68,7 +68,7 @@ if !has('gui_running') "
     "colorscheme distinguished
     "let g:solarized_termtrans=0
     "let g:solarized_termcolors=16
-    "colorscheme solarized
+    colorscheme solarized
     "use terminal background
     "hi Normal ctermbg=none
     "hi todo ctermbg=none

@@ -103,7 +103,7 @@ set smarttab                "tab insertion actually indents on line start
 set autoindent              "new line copies indent from above
 
 "feedback
-set cursorline              "highlight current line
+"set cursorline              "highlight current line
 set showmatch               "highlight both matching parentheses
 set listchars=eol:¬,tab:→\ ,nbsp:•,trail:·
 set list

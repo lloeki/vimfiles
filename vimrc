@@ -111,7 +111,7 @@ set list
 "OS clipboard integration
 set clipboard^=unnamed
 
-"filetype specific settings
+"filetype/language specific settings
 autocmd FileType make    set noexpandtab   "makefiles need tabs
 autocmd FileType ruby    set softtabstop=2 shiftwidth=2
 autocmd FileType eruby   set softtabstop=2 shiftwidth=2
@@ -120,6 +120,7 @@ au      BufRead,BufNewFile Guardfile setfiletype ruby
 au      BufRead,BufNewFile *.skim setfiletype slim
 au      BufRead,BufNewFile *.opal setfiletype ruby
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:go_fmt_command = "goimports"
 
 if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
     setfiletype rfc

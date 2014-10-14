@@ -33,7 +33,7 @@ Bundle 'scrooloose/syntastic'
 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'vim-scripts/glsl.vim'
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
 Bundle 'groenewege/vim-less'
 "Bundle 'gkz/vim-ls'
 Bundle 'tpope/vim-markdown'

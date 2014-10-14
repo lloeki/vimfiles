@@ -171,6 +171,10 @@ nnoremap <leader>a :Ag<SPACE>
 
 "SuperTab options
 let g:SuperTabDefaultCompletionType = "context"
+" Complete options (disable preview scratch window)
+set completeopt=menu,menuone,longest
+" Limit popup menu height
+set pumheight=15
 
 "OmniComplete
 let g:rubycomplete_buffer_loading = 1

@@ -68,7 +68,8 @@ if !has('gui_running') "
     "colorscheme distinguished
     "let g:solarized_termtrans=0
     "let g:solarized_termcolors=16
-    colorscheme solarized
+    "colorscheme solarized
+    colorscheme smyck
     "use terminal background
     "hi Normal ctermbg=none
     "hi todo ctermbg=none

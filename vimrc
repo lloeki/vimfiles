@@ -13,14 +13,6 @@ let g:secure_modelines_verbose=1
 " prevent .netrwhist creation
 let g:netrw_dirhistmax = 0
 
-"make sure backspace behaves
-set backspace=indent,eol,start
-
-"shorten esc timeout
-set timeout
-set timeoutlen=1000
-set ttimeoutlen=50
-
 "airline
 let g:airline_theme='raven'
 if !exists('g:airline_symbols')
@@ -51,15 +43,9 @@ set wildignore+=.git,.svn
 set wildignore+=env,venv*
 
 "display more info
-set showmode        "display current mode at the bottom
-set showcmd         "display command info at the bottom
-set ruler           "display coordinates and relative position at the bottom
 set number          "show line numbers in left margin
-set laststatus=2
-
 
 " search tweaks
-set incsearch
 set ignorecase      "ignore case when searching
 set smartcase       "... but be nice when actually typing caps
 
@@ -69,13 +55,11 @@ set shiftround              "round indent to next offset
 set tabstop=4               "size of tab character
 set expandtab               "insert spaces instead of tab
 set softtabstop=4           "... and that much spaces are inserted
-set smarttab                "tab insertion actually indents on line start
-set autoindent              "new line copies indent from above
 
 "feedback
 "set cursorline              "highlight current line
 set showmatch               "highlight both matching parentheses
-set listchars=eol:¬,tab:→\ ,nbsp:•,trail:·
+set listchars=eol:¬,tab:→\ ,nbsp:•,trail:·,extends:>,precedes:<
 set list
 
 "OS clipboard integration

@@ -8,6 +8,8 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'tpope/vim-sensible'
+
 Bundle 'altercation/vim-colors-solarized'
 "Bundle 'Lokaltog/vim-distinguished'
 Bundle 'jnurmine/Zenburn'

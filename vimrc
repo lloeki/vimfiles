@@ -37,6 +37,8 @@ if !has('gui_running')
     set showtabline=1           "automatic tab bar
     set mouse=n                 "mouse support
     set background=light
+    colorscheme one-light
+
     "use terminal background
     hi Normal ctermbg=none
     hi todo ctermbg=none

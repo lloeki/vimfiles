@@ -127,7 +127,7 @@ let g:SuperTabDefaultCompletionType = "context"
 " Complete options (disable preview scratch window)
 set completeopt=menu,menuone,longest
 " Limit popup menu height
-set pumheight=15
+set pumheight=10
 
 "OmniComplete
 let g:rubycomplete_buffer_loading = 1

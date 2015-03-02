@@ -32,9 +32,9 @@ hi Keyword          ctermfg=5           ctermbg=none
 hi Exception        ctermfg=5           ctermbg=none
 
 hi PreProc          ctermfg=5           ctermbg=none
-hi Include          ctermfg=5           ctermbg=none
+hi Include          ctermfg=4           ctermbg=none
 hi Define           ctermfg=5           ctermbg=none
-hi Macro            ctermfg=5           ctermbg=none
+hi Macro            ctermfg=4           ctermbg=none
 hi PreCondit        ctermfg=5           ctermbg=none
 
 hi Type             ctermfg=3           ctermbg=none

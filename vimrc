@@ -21,59 +21,24 @@ set timeout
 set timeoutlen=1000
 set ttimeoutlen=50
 
-"powerline/airline font
-"let g:Powerline_symbols = 'fancy'
-"let g:airline_powerline_fonts = 1
-"let g:airline_theme='solarized'
-"let g:airline#extensions#tabline#enabled = 1
+"airline
 if !exists('g:airline_symbols')
-let g:airline_symbols = {}
+    let g:airline_symbols = {}
 endif
-
-" unicode symbols
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.branch = '⎇'
-"let g:airline_symbols.paste = 'ρ'
-"let g:airline_symbols.paste = 'Þ'
-"let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
 
-"let g:airline_left_sep = '⮀'
-"let g:airline_left_alt_sep = '⮁'
-"let g:airline_right_sep = '⮂'
-"let g:airline_right_alt_sep = '⮃'
-"let g:airline_symbols.branch = '⭠'
-"let g:airline_symbols.readonly = '⭤'
-"let g:airline_symbols.linenr = '⭡'
-
-"gitgutter
-"let g:gitgutter_highlight_lines = 1
-let g:gitgutter_escape_grep = 1
-let g:gitgutter_diff_args = '-w'
-"let g:gitgutter_signs = 0
-
-let g:solarized_visibility="low"
-if !has('gui_running') "
+"terminal behavior and appearance
+if !has('gui_running')
     set showtabline=1           "automatic tab bar
-    set mouse=a                 "mouse support
-    set background=dark
-    let g:zenburn_force_dark_Background = 1
-    "colorscheme zenburn
-    "colorscheme candy
-    "colorscheme grb256
-    "colorscheme github
-    "colorscheme codeschool
-    "colorscheme distinguished
-    "let g:solarized_termtrans=0
-    "let g:solarized_termcolors=16
-    "colorscheme solarized
-    colorscheme smyck
+    set mouse=n                 "mouse support
+    set background=light
     "use terminal background
-    "hi Normal ctermbg=none
-    "hi todo ctermbg=none
-    "hi statement ctermbg=none
+    hi Normal ctermbg=none
+    hi todo ctermbg=none
+    hi statement ctermbg=none
 endif
 
 "ignore some files
@@ -152,24 +117,10 @@ let mapleader = ','
 set hlsearch
 map <leader>c :nohlsearch<CR>
 
-map <leader>q :cw<CR>
-
-map <leader>R :source ~/.vimrc<CR>
 map <leader>t :NERDTreeToggle<CR>
 map <leader>b :CtrlPBuffer<CR>
 map <leader>r :CtrlPTag<CR>
 map <leader>p :CtrlP<CR>
-
-"coffee
-vmap <leader>cc <esc>:'<,'>:CoffeeCompile<CR>
-map <leader>cc :CoffeeCompile<CR>
-command -nargs=1 C CoffeeCompile | :<args>
-
-"session
-nnoremap <leader>S :mksession!<CR>
-
-"Ag
-nnoremap <leader>a :Ag<SPACE>
 
 "SuperTab options
 let g:SuperTabDefaultCompletionType = "context"
@@ -182,45 +133,6 @@ set pumheight=15
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 set completeopt+=longest
-
-"TagBar
-"let g:tagbar_usearrows = 1
-"nnoremap <leader>l :TagbarToggle<CR>
-
-
-"xterm control+arrows
-"map [1;5D <C-Left>
-"map! [1;5D <C-Left>
-"map [1;5C <C-Right>
-"map! [1;5C <C-Right>
-"Terminal.app control+arrows
-"map [5D <Home>
-"map! [5D <Home>
-"map [5C <End>
-"map! [5C <End>
-"Lion Terminal.app option+arrows
-"map b <M-Left>
-"map! b <M-Left>
-"map f <M-Right>
-"map! f <M-Right>
-"Terminal.app option+arrows
-"map [1;3D <M-Left>
-"map! [1;3D <M-Left>
-"map [1;3C <M-Right>
-"map! [1;3C <M-Right>
-
-" make meta move on words like control
-"map <M-Left> <C-Left>
-"map! <M-Left> <C-Left>
-"map <M-Right> <C-Right>
-"map! <M-Right> <C-Right>
-
-" highlight background for >80
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
-
-" conserve undo info
-"set undofile
 
 " restore last known cursor position
 function! ResCur()
@@ -267,23 +179,6 @@ function! RestoreSession()
   end
 endfunction
 autocmd VimEnter * call RestoreSession()
-
-" relative line numbers
-"function! NumberToggle()
-"  if(&relativenumber == 1)
-"    set norelativenumber
-"  else
-"    set relativenumber
-"  endif
-"endfunc
-"
-"nnoremap <C-n> :call NumberToggle()<cr>
-"
-":au FocusLost * :set norelativenumber
-":au FocusGained * :set relativenumber
-"
-"autocmd InsertEnter * :set norelativenumber
-"autocmd InsertLeave * :set relativenumber
 
 "matchit
 source $VIMRUNTIME/macros/matchit.vim

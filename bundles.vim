@@ -24,6 +24,7 @@ Bundle 'bling/vim-airline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/syntastic'
+Bundle 'rking/ag.vim'
 
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'vim-scripts/glsl.vim'

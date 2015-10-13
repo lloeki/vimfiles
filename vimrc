@@ -129,6 +129,9 @@ let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 set completeopt+=longest
 
+" quick task list
+command Tasks Ag '(TODO|FIX(?:ME|)|HACK|XXX|OPT(?:IMIZE|)|BUG|WTF|NOTE|CHANGED|REVIEW|IDEA):?\s?(.+$)'
+
 " restore last known cursor position
 function! ResCur()
   if line("'\"") <= line("$")

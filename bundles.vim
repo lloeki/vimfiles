@@ -43,6 +43,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-unimpaired'
 
 filetype plugin indent on
 syntax on

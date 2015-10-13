@@ -110,6 +110,13 @@ map <leader>b :CtrlPBuffer<CR>
 map <leader>r :CtrlPTag<CR>
 map <leader>p :CtrlP<CR>
 
+nmap ( [
+nmap ) ]
+omap ( [
+omap ) ]
+xmap ( [
+xmap ) ]
+
 "SuperTab options
 let g:SuperTabDefaultCompletionType = "context"
 " Complete options (disable preview scratch window)

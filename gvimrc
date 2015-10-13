@@ -9,7 +9,7 @@ macmenu File.Print key=<nop>
 nnoremap <D-S-left>   :tabprevious<CR>
 nnoremap <D-S-right>  :tabnext<CR>
 nnoremap <D-p>        :CtrlP<CR>
-"nnoremap <D-b>        :CtrlPBuffer<CR>
+nnoremap <D-b>        :CtrlPBuffer<CR>
 
 " better font
 set guifont=Source\ Code\ Pro:h14

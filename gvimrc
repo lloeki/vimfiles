@@ -12,7 +12,7 @@ nnoremap <D-p>        :CtrlP<CR>
 "nnoremap <D-b>        :CtrlPBuffer<CR>
 
 " better font
-set guifont=Menlo:h12
+set guifont=Source\ Code\ Pro:h14
 
 set noballooneval
 
@@ -34,15 +34,17 @@ set guioptions-=b
 
 set background=light
 "let g:airline_theme="light"
-let g:airline_theme="sol"
+"let g:airline_theme="sol"
 "let g:solarized_visibility="low"
 "colorscheme solarized
 "let g:zenburn_force_dark_Background = 1
 "colorscheme zenburn
 "colorscheme codeschool
-colorscheme github
+"colorscheme github
 "colorscheme twilight
 "colorscheme candy
+set background=light
+colorscheme one-light
 
 "window size
 set columns=90

@@ -14,6 +14,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'jnurmine/Zenburn'
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'lloeki/vim-one-colorschemes'
 
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-fugitive'

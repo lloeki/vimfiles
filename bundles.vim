@@ -36,7 +36,7 @@ Bundle 'slim-template/vim-slim'
 Bundle 'jboyens/vim-protobuf'
 Bundle 'dag/vim-fish'
 Bundle 'vim-scripts/rfc-syntax'
-Bundle 'rust-lang/rust.vim' 
+Bundle 'rust-lang/rust.vim'
 
 Bundle 'vim-scripts/argtextobj.vim'
 Bundle 'michaeljsmith/vim-indent-object'

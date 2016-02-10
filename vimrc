@@ -41,6 +41,7 @@ endif
 set wildignore+=*.o,*.obj,*.pyc
 set wildignore+=.git,.svn
 set wildignore+=env,venv*
+set wildignore+=node_modules
 
 "display more info
 set number          "show line numbers in left margin

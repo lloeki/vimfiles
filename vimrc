@@ -37,6 +37,10 @@ if !has('gui_running')
     hi statement ctermbg=none
 endif
 
+"appearance tweaks
+hi VertSplit cterm=NONE
+set fillchars+=vert:│
+
 "ignore some files
 set wildignore+=*.o,*.obj,*.pyc
 set wildignore+=.git,.svn

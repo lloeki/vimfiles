@@ -38,7 +38,7 @@ if !has('gui_running')
 endif
 
 "appearance tweaks
-hi VertSplit cterm=NONE
+hi VertSplit cterm=NONE gui=NONE
 set fillchars+=vert:│
 
 "ignore some files

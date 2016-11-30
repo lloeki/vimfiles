@@ -28,13 +28,15 @@ let g:airline_symbols.whitespace = ''
 if !has('gui_running')
     set showtabline=1           "automatic tab bar
     set mouse=n                 "mouse support
-    set background=dark
-    colorscheme eink
+    set background=light
+    "let g:nofrils_strbackgrounds=1
+    colorscheme nofrils-light
 
     "use terminal background
     hi Normal ctermbg=none
     hi todo ctermbg=none
     hi statement ctermbg=none
+    hi LineNr ctermbg=none
 endif
 
 "appearance tweaks

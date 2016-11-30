@@ -16,6 +16,7 @@ Bundle 'endel/vim-github-colorscheme'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'lloeki/vim-one-colorschemes'
 Bundle 'https://bitbucket.org/kisom/eink.vim.git'
+Bundle 'robertmeta/nofrils'
 
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-fugitive'

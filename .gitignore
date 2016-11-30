@@ -1,4 +1,4 @@
 *.swp
 tmp/
 .netrwhist
-bundle/*
+plugged/*

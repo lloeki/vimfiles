@@ -1,7 +1,7 @@
 " lloeki's vimrc
 
 "bundle loading via vundle
-source ~/.vim/bundles.vim
+source ~/.vim/plugged.vim
 
 scriptencoding "utf-8"
 

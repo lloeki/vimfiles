@@ -1,19 +1,19 @@
 " lloeki's vimrc
 
-"bundle loading via vundle
+" Bundle loading via vim-plug
 source ~/.vim/plugged.vim
 
 scriptencoding "utf-8"
 
-"security measure
+" Security measure
 set modelines=0
 let g:secure_modelines_leave_modeline=1
 let g:secure_modelines_verbose=1
 
-" prevent .netrwhist creation
+" Prevent .netrwhist creation
 let g:netrw_dirhistmax = 0
 
-"airline
+" Airline
 let g:airline_theme='raven'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -24,89 +24,105 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.whitespace = ''
 
-"terminal behavior and appearance
+" Terminal behavior and appearance
 if !has('gui_running')
-    set showtabline=1           "automatic tab bar
-    set mouse=n                 "mouse support
-    set background=light
-    "let g:nofrils_strbackgrounds=1
-    colorscheme nofrils-light
+  set showtabline=1           "automatic tab bar
+  set mouse=n                 "mouse support
+  set background=light
+  colorscheme nofrils-light
 
-    "use terminal background
-    hi Normal ctermbg=none
-    hi todo ctermbg=none
-    hi statement ctermbg=none
-    hi LineNr ctermbg=none
+  "use terminal background
+  hi Normal ctermbg=none
+  hi todo ctermbg=none
+  hi statement ctermbg=none
+  hi LineNr ctermbg=none
 endif
 
-"appearance tweaks
+" Appearance tweaks
 hi VertSplit cterm=NONE gui=NONE
 set fillchars+=vert:│
 
-"ignore some files
-set wildignore+=*.o,*.obj,*.pyc
+" Ignore some files
+set wildignore+=*.o,*.obj
 set wildignore+=.git,.svn
-set wildignore+=env,venv*
+set wildignore+=,*.pyc,env,venv*
 set wildignore+=node_modules
+set wildignore+=pkg
 
-"display more info
+" Display more info
 set number          "show line numbers in left margin
 
-" search tweaks
+" Search tweaks
 set ignorecase      "ignore case when searching
 set smartcase       "... but be nice when actually typing caps
 
-" tabbing settings
+" Tabbing settings
 set shiftwidth=4            "indent size
 set shiftround              "round indent to next offset
 set tabstop=4               "size of tab character
 set expandtab               "insert spaces instead of tab
 set softtabstop=4           "... and that much spaces are inserted
 
-"feedback
-"set cursorline              "highlight current line
+" Feedback
+set hlsearch                "highlight search matches
+set cursorline              "highlight current line
 set showmatch               "highlight both matching parentheses
 set listchars=eol:¬,tab:→\ ,nbsp:•,trail:·,extends:>,precedes:<
-set list
+set list                    "display invisible chars
 
-"OS clipboard integration
+" OS clipboard integration
 set clipboard^=unnamed
 
-"filetype/language specific settings
+" Filetype/language specific settings
 autocmd FileType make    set noexpandtab   "makefiles need tabs
 autocmd FileType ruby    set softtabstop=2 shiftwidth=2
 autocmd FileType eruby   set softtabstop=2 shiftwidth=2
 autocmd FileType coffee  set softtabstop=4 shiftwidth=4
-au      BufRead,BufNewFile Guardfile setfiletype ruby
-au      BufRead,BufNewFile *.skim setfiletype slim
-au      BufRead,BufNewFile *.opal setfiletype ruby
+au      BufRead,BufNewFile Guardfile   setfiletype ruby
+au      BufRead,BufNewFile *.skim      setfiletype slim
+au      BufRead,BufNewFile *.opal      setfiletype ruby
+autocmd FileType go      set nolist
+
+if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
+  setfiletype rfc
+  set textwidth=72
+endif
+
+" Syntastic
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:go_fmt_command = "goimports"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_enable_signs = 1
+let g:syntastic_enable_highlighting = 1
 
-if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
-    setfiletype rfc
-    set textwidth=72
-endif
-
-"swap/undo files
+" Swap and undo files
 set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
 "set undodir=~/.vim/tmp/undo//,.
 
-"buffer management
+" Buffer management
 set swb=usetab      "make :sb <filename> go to tabs too
 
-"key mappings
+" Key mappings
 let mapleader = ','
 
-set hlsearch
-map <leader>c :nohlsearch<CR>
+nmap <leader>c :call ToggleQuickfixList()<CR>
+nmap <leader>l :call ToggleLocationList()<CR>
+nmap <leader>e :SyntasticCheck<CR>:SyntasticSetLoclist<CR>:Errors<CR>
+
+nmap <F1> :nohlsearch<CR>
+nmap <F4> :SyntasticToggleMode<CR>
+nmap <F5> :set number!<CR>
+nmap <F6> :set list!<CR>
+inoremap <F5> <C-O>:set number!<CR>
+inoremap <F6> <C-O>:set list!<CR>
 
 map <leader>t :NERDTreeToggle<CR>
 map <leader>b :CtrlPBuffer<CR>
 map <leader>r :CtrlPTag<CR>
 map <leader>p :CtrlP<CR>
 
+" Unimpaired remap for non-US keyboard
 nmap ( [
 nmap ) ]
 omap ( [
@@ -114,22 +130,21 @@ omap ) ]
 xmap ( [
 xmap ) ]
 
-"SuperTab options
+" SuperTab options
 let g:SuperTabDefaultCompletionType = "context"
 " Complete options (disable preview scratch window)
 set completeopt=menu,menuone,longest
 " Limit popup menu height
 set pumheight=10
 
-"OmniComplete
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_classes_in_global = 1
-set completeopt+=longest
+" EasyAlign
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " quick task list
 command Tasks Ag '(TODO|FIX(?:ME|)|HACK|XXX|OPT(?:IMIZE|)|BUG|WTF|NOTE|CHANGED|REVIEW|IDEA):?\s?(.+$)'
 
-" restore last known cursor position
+" Restore last known cursor position
 function! ResCur()
   if line("'\"") <= line("$")
     normal! g`"
@@ -137,7 +152,7 @@ function! ResCur()
   endif
 endfunction
 
-" unfold at cursor position
+" Unfold at cursor position
 if has("folding")
   function! UnfoldCur()
     if !&foldenable
@@ -157,7 +172,7 @@ if has("folding")
   endfunction
 endif
 
-" restore last known cursor position on open
+" Restore last known cursor position on open
 augroup resCur
   autocmd!
   if has("folding")
@@ -167,7 +182,7 @@ augroup resCur
   endif
 augroup END
 
-" restore session if Session.vim exists
+" Restore session if Session.vim exists
 function! RestoreSession()
   if argc() == 0 && filereadable("Session.vim") "vim called without arguments
     execute 'source Session.vim'
@@ -175,13 +190,13 @@ function! RestoreSession()
 endfunction
 autocmd VimEnter * call RestoreSession()
 
-"matchit
+" Matchit
 source $VIMRUNTIME/macros/matchit.vim
 
-"crontab -e
+" Fix for crontab -e
 au! BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
 
-"term title
+" Term title
 set title
 set t_ts=]6;
 set t_fs=

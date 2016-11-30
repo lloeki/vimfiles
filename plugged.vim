@@ -1,9 +1,9 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'gmarik/vundle'
-
+" Sensible defaults
 Plug 'tpope/vim-sensible'
 
+" Themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'jnurmine/Zenburn'
 Plug 'endel/vim-github-colorscheme'
@@ -11,37 +11,46 @@ Plug 'flazz/vim-colorschemes'
 Plug 'lloeki/vim-one-colorschemes'
 Plug 'https://bitbucket.org/kisom/eink.vim.git'
 Plug 'robertmeta/nofrils'
+Plug 'whatyouhide/vim-gotham'
 
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-fugitive'
+" External tool integration
+Plug 'tpope/vim-bundler'      " bundler + gem-ctags
+Plug 'tpope/vim-fugitive'     " git
+Plug 'rking/ag.vim'           " the silver searcher
 
-Plug 'ciaranm/securemodelines'
-Plug 'kien/ctrlp.vim'
+" UI extensions
+Plug 'ciaranm/securemodelines'          " safe modelines in files
+Plug 'kien/ctrlp.vim'                   " fuzzy file+buffer search
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree'
-Plug 'ervandew/supertab'
-Plug 'scrooloose/syntastic'
-Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'              , { 'on': 'NERDTreeToggle' }
+Plug 'ervandew/supertab'                " completion
+Plug 'scrooloose/syntastic'             " linter checks
+Plug 'milkypostman/vim-togglelist'      " toggle quickfix and location lists
 
-Plug 'kchmck/vim-coffee-script'
-Plug 'vim-scripts/glsl.vim'
-Plug 'fatih/vim-go'
-Plug 'groenewege/vim-less'
-Plug 'tpope/vim-markdown'
-Plug 'slim-template/vim-slim'
-Plug 'jboyens/vim-protobuf'
-Plug 'dag/vim-fish'
-Plug 'vim-scripts/rfc-syntax'
-Plug 'rust-lang/rust.vim'
+" Languages
+Plug 'kchmck/vim-coffee-script'   , { 'for': 'coffee' }
+Plug 'vim-scripts/glsl.vim'       , { 'for': 'glsl' }
+Plug 'fatih/vim-go'              ", { 'for': 'go', 'do': ':GoInstallBinaries' }
+"Plug 'nsf/gocode'                , { 'for': 'go', 'rtp': 'vim' }
+Plug 'groenewege/vim-less'        , { 'for': 'less' }
+Plug 'tpope/vim-markdown'        ", { 'for': ['md', 'mdown', 'markdown'] }
+Plug 'slim-template/vim-slim'     , { 'for': 'slim' }
+Plug 'jboyens/vim-protobuf'       , { 'for': 'proto' }
+Plug 'dag/vim-fish'               , { 'for': 'fish' }
+Plug 'vim-scripts/rfc-syntax'     , { 'for': 'rfc' }
+Plug 'rust-lang/rust.vim'        ", { 'for': ['rs', 'rust'] }
 
-Plug 'vim-scripts/argtextobj.vim'
-Plug 'michaeljsmith/vim-indent-object'
+" Text objects
+Plug 'vim-scripts/argtextobj.vim'           " arguments
+Plug 'michaeljsmith/vim-indent-object'      " indentation
 
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-unimpaired'
+" Extensions
+Plug 'junegunn/vim-easy-align'              " alignment
+Plug 'tpope/vim-repeat'                     " extend `.`
+Plug 'tpope/vim-surround'                   " surround
+Plug 'tpope/vim-endwise'                    " extend `%`
+Plug 'tpope/vim-eunuch'                     " unix helpers
+Plug 'tpope/vim-unimpaired'                 " next/prev
 
 call plug#end()

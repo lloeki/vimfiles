@@ -65,7 +65,7 @@ set softtabstop=4           "... and that much spaces are inserted
 
 " Feedback
 set hlsearch                "highlight search matches
-set cursorline              "highlight current line
+"set cursorline              "highlight current line
 set showmatch               "highlight both matching parentheses
 set listchars=eol:¬,tab:→\ ,nbsp:•,trail:·,extends:>,precedes:<
 set list                    "display invisible chars

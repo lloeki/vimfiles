@@ -89,17 +89,6 @@ if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
     set textwidth=72
 endif
 
-"notify line over length
-function HighlightOverLength(len)
-    highlight OverLength ctermbg=blue ctermfg=white guibg=#59292
-    execute 'match OverLength /\%'.(a:len+1).'v.\+/'
-endfunction
-autocmd FileType vim      call HighlightOverLength(80)
-autocmd FileType ruby     call HighlightOverLength(80)
-autocmd FileType slim     call HighlightOverLength(80)
-autocmd FileType python   call HighlightOverLength(80)
-autocmd FileType mdown    call HighlightOverLength(80)
-
 "swap/undo files
 set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
 "set undodir=~/.vim/tmp/undo//,.

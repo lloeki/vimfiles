@@ -181,4 +181,10 @@ source $VIMRUNTIME/macros/matchit.vim
 "crontab -e
 au! BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
 
+"term title
+set title
+set t_ts=]6;
+set t_fs=
+auto BufEnter * let &titlestring = "file://" . hostname() . expand("%:p")
+
 " vim: ft=vim

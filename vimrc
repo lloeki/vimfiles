@@ -202,4 +202,11 @@ set t_ts=]6;
 set t_fs=
 auto BufEnter * let &titlestring = "file://" . hostname() . expand("%:p")
 
+function! UpdateTags()
+  execute ":silent !ctags -R ."
+  execute ":redraw!"
+  echohl StatusLine | echo "tags updated" | echohl None
+endfunction
+nnoremap <F8> :call UpdateTags()<CR>
+
 " vim: ft=vim

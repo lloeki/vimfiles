@@ -4,5 +4,4 @@
 ln -sfn "$HOME/.vim/gvimrc" "$HOME/.gvimrc"
 ln -sfn "$HOME/.vim/vimrc" "$HOME/.vimrc"
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-vim -u bundles.vim +BundleInstall +qall
+vim -u plugged.vim +PlugInstall +qall

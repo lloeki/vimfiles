@@ -88,13 +88,9 @@ if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
   set textwidth=72
 endif
 
-" Syntastic
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_javascript_checkers = ['eslint']
+" Linters
 let g:go_fmt_command = "goimports"
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_enable_signs = 1
-let g:syntastic_enable_highlighting = 1
+autocmd! BufWritePost * Neomake
 
 " Swap and undo files
 set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
@@ -108,10 +104,8 @@ let mapleader = ','
 
 nmap <leader>c :call ToggleQuickfixList()<CR>
 nmap <leader>l :call ToggleLocationList()<CR>
-nmap <leader>e :SyntasticCheck<CR>:SyntasticSetLoclist<CR>:Errors<CR>
 
 nmap <F1> :nohlsearch<CR>
-nmap <F4> :SyntasticToggleMode<CR>
 nmap <F5> :set number!<CR>
 nmap <F6> :set list!<CR>
 inoremap <F5> <C-O>:set number!<CR>

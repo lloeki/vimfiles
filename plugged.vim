@@ -51,6 +51,7 @@ Plug 'michaeljsmith/vim-indent-object'      " indentation
 Plug 'junegunn/vim-easy-align'              " alignment
 Plug 'tpope/vim-repeat'                     " extend `.`
 Plug 'tpope/vim-surround'                   " surround
+Plug 'tpope/vim-commentary'                 " comments
 Plug 'tpope/vim-endwise'                    " extend `%`
 Plug 'tpope/vim-eunuch'                     " unix helpers
 Plug 'tpope/vim-unimpaired'                 " next/prev

@@ -51,6 +51,7 @@ set wildignore+=.git,.svn
 set wildignore+=,*.pyc,env,venv*
 set wildignore+=node_modules
 set wildignore+=pkg
+set wildignore+=vendor
 
 " Display more info
 set number          "show line numbers in left margin

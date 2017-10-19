@@ -21,7 +21,7 @@ Plug 'rking/ag.vim'           " the silver searcher
 
 " UI extensions
 Plug 'ciaranm/securemodelines'          " safe modelines in files
-Plug 'kien/ctrlp.vim'                   " fuzzy file+buffer search
+Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'              , { 'on': 'NERDTreeToggle' }

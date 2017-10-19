@@ -116,9 +116,10 @@ inoremap <F5> <C-O>:set number!<CR>
 inoremap <F6> <C-O>:set list!<CR>
 
 map <leader>t :NERDTreeToggle<CR>
-map <leader>b :CtrlPBuffer<CR>
-map <leader>r :CtrlPTag<CR>
-map <leader>p :CtrlP<CR>
+map <leader>b :Buffers<CR>
+map <leader>r :Tags<CR>
+map <leader>p :Files<CR>
+map <C-p> :Files<CR>
 
 " Unimpaired remap for non-US keyboard
 nmap ( [

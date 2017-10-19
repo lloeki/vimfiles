@@ -17,7 +17,7 @@ Plug 'whatyouhide/vim-gotham'
 " External tool integration
 Plug 'tpope/vim-bundler'      " bundler + gem-ctags
 Plug 'tpope/vim-fugitive'     " git
-Plug 'rking/ag.vim'           " the silver searcher
+Plug 'jremmen/vim-ripgrep'    " rg is the new ag is the new ack
 
 " UI extensions
 Plug 'ciaranm/securemodelines'          " safe modelines in files

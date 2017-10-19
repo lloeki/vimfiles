@@ -28,6 +28,9 @@ let g:airline_symbols.whitespace = ''
 if !has('gui_running')
   set showtabline=1           "automatic tab bar
   set mouse=n                 "mouse support
+  if has("mouse_sgr")
+      set ttymouse=sgr
+  end
   set background=dark
   colorscheme one
 

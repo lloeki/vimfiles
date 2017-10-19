@@ -28,6 +28,7 @@ Plug 'scrooloose/nerdtree'              , { 'on': 'NERDTreeToggle' }
 Plug 'ervandew/supertab'                " completion
 Plug 'neomake/neomake'                  " linter checks
 Plug 'milkypostman/vim-togglelist'      " toggle quickfix and location lists
+Plug 'junegunn/goyo.vim'                " distraction-free writing
 
 " Languages
 Plug 'kchmck/vim-coffee-script'   , { 'for': 'coffee' }

@@ -93,8 +93,9 @@ if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
 endif
 
 " Linters
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
 let g:go_fmt_command = "goimports"
-autocmd! BufWritePost * Neomake
 
 " Swap and undo files
 set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.

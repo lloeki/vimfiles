@@ -26,7 +26,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'              , { 'on': 'NERDTreeToggle' }
 Plug 'ervandew/supertab'                " completion
-Plug 'neomake/neomake'                  " linter checks
+Plug 'w0rp/ale'                         " linter checks
 Plug 'milkypostman/vim-togglelist'      " toggle quickfix and location lists
 Plug 'junegunn/goyo.vim'                " distraction-free writing
 

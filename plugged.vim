@@ -55,6 +55,5 @@ Plug 'tpope/vim-commentary'                 " comments
 Plug 'tpope/vim-endwise'                    " extend `%`
 Plug 'tpope/vim-eunuch'                     " unix helpers
 Plug 'tpope/vim-unimpaired'                 " next/prev
-Plug 'qpkorr/vim-bufkill'                   " close but keep split
 
 call plug#end()

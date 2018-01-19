@@ -31,8 +31,8 @@ if !has('gui_running')
   if has("mouse_sgr")
       set ttymouse=sgr
   end
-  set background=dark
-  colorscheme one
+  set background=light
+  colorscheme vacme
 
   "use terminal background
   hi Normal ctermbg=none

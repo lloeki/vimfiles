@@ -13,6 +13,7 @@ Plug 'rakr/vim-one'
 Plug 'https://bitbucket.org/kisom/eink.vim.git'
 Plug 'robertmeta/nofrils'
 Plug 'whatyouhide/vim-gotham'
+Plug 'olivertaylor/vacme'
 
 " External tool integration
 Plug 'tpope/vim-bundler'      " bundler + gem-ctags

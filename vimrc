@@ -32,13 +32,13 @@ if !has('gui_running')
       set ttymouse=sgr
   end
   set background=light
-  colorscheme vacme
+  colorscheme smpl
 
   "use terminal background
-  hi Normal ctermbg=none
-  hi todo ctermbg=none
-  hi statement ctermbg=none
-  hi LineNr ctermbg=none
+  "hi Normal ctermbg=none
+  "hi todo ctermbg=none
+  "hi statement ctermbg=none
+  "hi LineNr ctermbg=none
 endif
 
 " Appearance tweaks
@@ -54,7 +54,7 @@ set wildignore+=pkg
 set wildignore+=vendor
 
 " Display more info
-set number          "show line numbers in left margin
+"set number          "show line numbers in left margin
 
 " Search tweaks
 set ignorecase      "ignore case when searching

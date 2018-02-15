@@ -4,16 +4,19 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 
 " Themes
-Plug 'altercation/vim-colors-solarized'
-Plug 'jnurmine/Zenburn'
-Plug 'endel/vim-github-colorscheme'
-Plug 'flazz/vim-colorschemes'
-Plug 'lloeki/vim-one-colorschemes'
-Plug 'rakr/vim-one'
-Plug 'https://bitbucket.org/kisom/eink.vim.git'
+"Plug 'altercation/vim-colors-solarized'
+"Plug 'jnurmine/Zenburn'
+"Plug 'endel/vim-github-colorscheme'
+"Plug 'flazz/vim-colorschemes'
+"Plug 'lloeki/vim-one-colorschemes'
+"Plug 'rakr/vim-one'
+Plug 'clinstid/eink.vim'
 Plug 'robertmeta/nofrils'
 Plug 'whatyouhide/vim-gotham'
 Plug 'olivertaylor/vacme'
+"Plug 'ayu-theme/ayu-vim'
+Plug 'pbrisbin/vim-colors-off'
+Plug 'ikaros/smpl-vim'
 
 " External tool integration
 Plug 'tpope/vim-bundler'      " bundler + gem-ctags

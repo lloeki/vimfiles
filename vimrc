@@ -13,10 +13,22 @@ let g:secure_modelines_verbose=1
 " Prevent .netrwhist creation
 let g:netrw_dirhistmax = 0
 
+" OS clipboard integration
+set clipboard^=unnamed
+
+" Terminal title
+set title
+set t_ts=]6;
+set t_fs=
+if !exists("autocmd_terminal_title")
+  let autocmd_terminal_title = 1
+  autocmd BufEnter,BufRead * let &titlestring = "file://" . hostname() . expand("%:p")
+endif
+
 " Airline
 let g:airline_theme='raven'
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+  let g:airline_symbols = {}
 endif
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -45,6 +57,11 @@ endif
 hi VertSplit cterm=NONE gui=NONE
 set fillchars+=vert:│
 
+" Linters
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'
+let g:go_fmt_command = "goimports"
+
 " Ignore some files
 set wildignore+=*.o,*.obj
 set wildignore+=.git,.svn
@@ -60,6 +77,10 @@ set wildignore+=vendor
 set ignorecase      "ignore case when searching
 set smartcase       "... but be nice when actually typing caps
 
+" Invisibles
+set listchars=eol:¬,tab:→\ ,nbsp:•,trail:·,extends:>,precedes:<
+set list                    "display invisible chars
+
 " Tabbing settings
 set shiftwidth=4            "indent size
 set shiftround              "round indent to next offset
@@ -71,31 +92,6 @@ set softtabstop=4           "... and that much spaces are inserted
 set hlsearch                "highlight search matches
 "set cursorline              "highlight current line
 set showmatch               "highlight both matching parentheses
-set listchars=eol:¬,tab:→\ ,nbsp:•,trail:·,extends:>,precedes:<
-set list                    "display invisible chars
-
-" OS clipboard integration
-set clipboard^=unnamed
-
-" Filetype/language specific settings
-autocmd FileType make    set noexpandtab   "makefiles need tabs
-autocmd FileType ruby    set softtabstop=2 shiftwidth=2
-autocmd FileType eruby   set softtabstop=2 shiftwidth=2
-autocmd FileType coffee  set softtabstop=4 shiftwidth=4
-au      BufRead,BufNewFile Guardfile   setfiletype ruby
-au      BufRead,BufNewFile *.skim      setfiletype slim
-au      BufRead,BufNewFile *.opal      setfiletype ruby
-autocmd FileType go      set nolist
-
-if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
-  setfiletype rfc
-  set textwidth=72
-endif
-
-" Linters
-let g:ale_sign_error = '✖'
-let g:ale_sign_warning = '⚠'
-let g:go_fmt_command = "goimports"
 
 " Swap and undo files
 set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
@@ -104,9 +100,17 @@ set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
 " Buffer management
 set swb=usetab      "make :sb <filename> go to tabs too
 
+" SuperTab options
+let g:SuperTabDefaultCompletionType = "context"
+" Complete options (disable preview scratch window)
+set completeopt=menu,menuone,longest
+" Limit popup menu height
+set pumheight=10
+
 " Key mappings
 let mapleader = ','
 
+" Useful panels
 nmap <leader>c :call ToggleQuickfixList()<CR>
 nmap <leader>l :call ToggleLocationList()<CR>
 
@@ -116,26 +120,28 @@ nmap <F6> :set list!<CR>
 inoremap <F5> <C-O>:set number!<CR>
 inoremap <F6> <C-O>:set list!<CR>
 
-map <leader>t :NERDTreeToggle<CR>
+" Diff before save
+nmap <leader>d :w !diff -u % -<CR>
+
+" Zen mode
+nmap <leader>z :set nolist<CR>:Goyo<CR>
+
+" Code navigation
+map <leader>t :Sexplore<CR>
 map <leader>b :Buffers<CR>
 map <leader>r :Tags<CR>
 map <leader>p :Files<CR>
-map <C-p> :Files<CR>
+
+" Terminal remap for non-US keyboard
+"tnoremap <C-b> <C-\>
 
 " Unimpaired remap for non-US keyboard
-nmap ( [
-nmap ) ]
-omap ( [
-omap ) ]
-xmap ( [
-xmap ) ]
-
-" SuperTab options
-let g:SuperTabDefaultCompletionType = "context"
-" Complete options (disable preview scratch window)
-set completeopt=menu,menuone,longest
-" Limit popup menu height
-set pumheight=10
+"nmap ( [
+"nmap ) ]
+"omap ( [
+"omap ) ]
+"xmap ( [
+"xmap ) ]
 
 " EasyAlign
 xmap ga <Plug>(EasyAlign)
@@ -143,6 +149,9 @@ nmap ga <Plug>(EasyAlign)
 
 " quick task list
 command Tasks Ag '(TODO|FIX(?:ME|)|HACK|XXX|OPT(?:IMIZE|)|BUG|WTF|NOTE|CHANGED|REVIEW|IDEA):?\s?(.+$)'
+
+" Editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
 
 " Restore last known cursor position
 function! ResCur()
@@ -182,6 +191,28 @@ augroup resCur
   endif
 augroup END
 
+" Filetype/language specific settings
+augroup vimrc
+  autocmd! *                             " clear for reload
+  autocmd FileType make                  setl noexpandtab
+  autocmd FileType ruby                  setl softtabstop=2 shiftwidth=2
+  autocmd FileType eruby                 setl softtabstop=2 shiftwidth=2
+  autocmd FileType coffee                setl softtabstop=4 shiftwidth=4
+  autocmd BufRead,BufNewFile Guardfile   setf ruby
+  autocmd BufRead,BufNewFile *.skim      setf slim
+  autocmd BufRead,BufNewFile *.opal      setf ruby
+  autocmd FileType go                    setl nolist
+  autocmd! BufNewFile,BufRead crontab.*  setl nobackup | setl nowritebackup   " Fix for crontab -e
+augroup END
+
+" Go tools path
+let g:go_bin_path = expand('~') .. "/.local/libexec/go/bin"
+
+if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
+  setfiletype rfc
+  set textwidth=72
+endif
+
 " Restore session if Session.vim exists
 function! RestoreSession()
   if argc() == 0 && filereadable("Session.vim") "vim called without arguments
@@ -192,15 +223,6 @@ autocmd VimEnter * call RestoreSession()
 
 " Matchit
 source $VIMRUNTIME/macros/matchit.vim
-
-" Fix for crontab -e
-au! BufNewFile,BufRead crontab.* set nobackup | set nowritebackup
-
-" Term title
-set title
-set t_ts=]6;
-set t_fs=
-auto BufEnter * let &titlestring = "file://" . hostname() . expand("%:p")
 
 function! UpdateTags()
   execute ":silent !ctags -R ."

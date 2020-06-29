@@ -49,6 +49,9 @@ Plug 'jboyens/vim-protobuf'       , { 'for': 'proto' }
 Plug 'dag/vim-fish'               , { 'for': 'fish' }
 Plug 'vim-scripts/rfc-syntax'     , { 'for': 'rfc' }
 Plug 'rust-lang/rust.vim'        ", { 'for': ['rs', 'rust'] }
+Plug 'LnL7/vim-nix'              ", { 'for': 'nix' }
+Plug 'toyamarinyon/vim-swift'    ", { 'for': 'swift' }
+Plug 'jjo/vim-cue'               ", { 'for': 'cue' }
 
 " Text objects
 Plug 'vim-scripts/argtextobj.vim'           " arguments

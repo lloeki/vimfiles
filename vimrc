@@ -194,6 +194,32 @@ augroup resCur
   endif
 augroup END
 
+function! ShellcheckDetect(buffer)
+  for l:line_num in [1, 2, 3]
+    let l:line = get(getbufline(a:buffer, l:line_num), 0, '')
+
+    if l:line[:11] is# '# shellcheck'
+      let l:command = l:line
+      for l:possible_shell in ['bash', 'dash', 'ash', 'tcsh', 'csh', 'zsh', 'ksh', 'sh']
+        if l:command =~# l:possible_shell . '\s*$'
+          return l:possible_shell
+        endif
+      endfor
+    endif
+  endfor
+
+  return ''
+endfunction
+
+function! ShellcheckSet(buffer)
+  let l:shell = ShellcheckDetect(a:buffer)
+  if l:shell == 'bash'
+    call setbufvar(a:buffer, 'is_bash', 1)
+  else
+    call setbufvar(a:buffer, 'is_bash', 0)
+  endif
+endfunction
+
 " Filetype/language specific settings
 augroup vimrc
   autocmd! *                             " clear for reload
@@ -205,6 +231,7 @@ augroup vimrc
   autocmd BufRead,BufNewFile *.skim      setf slim
   autocmd BufRead,BufNewFile *.opal      setf ruby
   autocmd FileType go                    setl nolist
+  autocmd FileType sh                    call ShellcheckSet(bufnr("%"))
   autocmd! BufNewFile,BufRead crontab.*  setl nobackup | setl nowritebackup   " Fix for crontab -e
 augroup END
 

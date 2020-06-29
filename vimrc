@@ -240,7 +240,7 @@ let g:go_bin_path = expand('~') .. "/.local/libexec/go/bin"
 
 if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
   setfiletype rfc
-  set textwidth=72
+  setl textwidth=72
 endif
 
 " Restore session if Session.vim exists

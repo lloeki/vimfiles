@@ -155,6 +155,9 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
 
 " Restore last known cursor position
 function! ResCur()
+  if &filetype == 'netrw'
+    return 0
+  endif
   if line("'\"") <= line("$")
     normal! g`"
     return 1

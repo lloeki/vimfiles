@@ -243,6 +243,7 @@ if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
   setl textwidth=72
 endif
 
+map <leader>s :mksession!<CR>
 " Restore session if Session.vim exists
 function! RestoreSession()
   if argc() == 0 && filereadable("Session.vim") "vim called without arguments

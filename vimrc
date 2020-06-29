@@ -245,12 +245,13 @@ endif
 
 map <leader>s :mksession!<CR>
 " Restore session if Session.vim exists
-function! RestoreSession()
-  if argc() == 0 && filereadable("Session.vim") "vim called without arguments
-    execute 'source Session.vim'
-  end
-endfunction
-autocmd VimEnter * call RestoreSession()
+"function! RestoreSession()
+"  if argc() == 0 && filereadable("Session.vim") "vim called without arguments
+"    "let answer = confirm('foo?', '&Yes\nNo', 1)
+"    execute 'source Session.vim'
+"  end
+"endfunction
+"autocmd VimEnter * call RestoreSession()
 
 " Matchit
 source $VIMRUNTIME/macros/matchit.vim

@@ -249,7 +249,7 @@ augroup vimrc
 augroup END
 
 " Go tools path
-let g:go_bin_path = expand('~') .. "/.local/libexec/go/bin"
+let g:go_bin_path = expand('$HOME') . "/.local/libexec/go/bin"
 
 if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
   setfiletype rfc

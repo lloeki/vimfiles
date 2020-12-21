@@ -44,7 +44,7 @@ if !has('gui_running')
       set ttymouse=sgr
   end
   set background=light
-  colorscheme smpl
+  "colorscheme smpl
 
   "use terminal background
   "hi Normal ctermbg=none

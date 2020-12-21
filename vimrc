@@ -164,6 +164,19 @@ function! ResCur()
   endif
 endfunction
 
+"fix netrw gx brokenness: https://github.com/vim/vim/issues/4738
+if has('macunix')
+  function! OpenURLUnderCursor()
+    let s:uri = matchstr(getline('.'), '[a-z]*:\/\/[^ >,;()]*')
+    let s:uri = shellescape(s:uri, 1)
+    if s:uri != ''
+      silent exec "!open '".s:uri."'"
+      :redraw!
+    endif
+  endfunction
+  nnoremap gx :call OpenURLUnderCursor()<CR>
+endif
+
 " Unfold at cursor position
 if has("folding")
   function! UnfoldCur()

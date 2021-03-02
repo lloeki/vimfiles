@@ -17,12 +17,16 @@ let g:netrw_dirhistmax = 0
 set clipboard^=unnamed
 
 " Terminal title
-set title
-set t_ts=]6;
-set t_fs=
-if !exists("autocmd_terminal_title")
-  let autocmd_terminal_title = 1
-  autocmd BufEnter,BufRead * let &titlestring = "file://" . hostname() . expand("%:p")
+if has('macunix')
+  set title
+  set t_ts=]6;
+  set t_fs=
+  if !exists("autocmd_terminal_title")
+    let autocmd_terminal_title = 1
+    autocmd BufEnter,BufRead * let &titlestring = "file://" . hostname() . expand("%:p")
+  endif
+else
+  set title
 endif
 
 " Airline

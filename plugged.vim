@@ -53,6 +53,7 @@ Plug 'LnL7/vim-nix'               , { 'for': 'nix' }
 Plug 'toyamarinyon/vim-swift'     , { 'for': 'swift' }
 Plug 'jjo/vim-cue'                , { 'for': 'cue' }
 Plug 'ionide/Ionide-vim'          , { 'for': 'fs' }
+Plug 'pocke/rbs.vim'              , { 'for': 'rbs' }
 
 " Text objects
 Plug 'vim-scripts/argtextobj.vim'           " arguments

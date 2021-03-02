@@ -64,6 +64,7 @@ set fillchars+=vert:│
 " Linters
 let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
+let g:ale_ruby_rubocop_executable = 'bundle'
 let g:go_fmt_command = "goimports"
 
 " Ignore some files
@@ -245,6 +246,7 @@ augroup vimrc
   autocmd FileType eruby                 setl softtabstop=2 shiftwidth=2
   autocmd FileType coffee                setl softtabstop=4 shiftwidth=4
   autocmd BufRead,BufNewFile Guardfile   setf ruby
+  autocmd BufRead,BufNewFile Vagrantfile setf ruby
   autocmd BufRead,BufNewFile *.skim      setf slim
   autocmd BufRead,BufNewFile *.opal      setf ruby
   autocmd FileType go                    setl nolist

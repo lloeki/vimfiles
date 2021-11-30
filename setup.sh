@@ -1,7 +1,5 @@
 #!/bin/sh
 
-[ $(pwd) = "$HOME/.vim" ] || ln -sfn "$(pwd)" "$HOME/.vim"
-ln -sfn "$HOME/.vim/gvimrc" "$HOME/.gvimrc"
-ln -sfn "$HOME/.vim/vimrc" "$HOME/.vimrc"
+[ "${PWD}" = "$HOME/.vim" ] || ln -sfn "${PWD}" "$HOME/.vim"
 
 vim -u plugged.vim +PlugInstall +qall

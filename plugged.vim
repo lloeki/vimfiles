@@ -17,7 +17,6 @@ Plug 'olivertaylor/vacme'
 "Plug 'ayu-theme/ayu-vim'
 Plug 'pbrisbin/vim-colors-off'
 Plug 'ikaros/smpl-vim'
-Plug 'fxn/vim-monochrome'
 
 " External tool integration
 Plug 'tpope/vim-bundler'      " bundler + gem-ctags
@@ -28,7 +27,8 @@ Plug 'jremmen/vim-ripgrep'    " rg is the new ag is the new ack
 Plug 'ciaranm/securemodelines'          " safe modelines in files
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-vinegar'                " enhance netrw
 Plug 'ervandew/supertab'                " completion
 Plug 'w0rp/ale'                         " linter checks

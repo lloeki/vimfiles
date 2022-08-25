@@ -240,7 +240,6 @@ endfunction
 
 " Filetype/language specific settings
 augroup vimrc
-  autocmd! *                             " clear for reload
   autocmd FileType make                  setl noexpandtab
   autocmd FileType ruby                  setl softtabstop=2 shiftwidth=2
   autocmd FileType eruby                 setl softtabstop=2 shiftwidth=2

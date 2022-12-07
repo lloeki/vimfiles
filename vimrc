@@ -73,7 +73,7 @@ set omnifunc=ale#completion#OmniFunc
 " Ignore some files
 set wildignore+=*.o,*.obj
 set wildignore+=.git,.svn
-set wildignore+=,*.pyc,env,venv*
+set wildignore+=*.pyc,env,venv*
 set wildignore+=node_modules
 set wildignore+=pkg
 set wildignore+=vendor

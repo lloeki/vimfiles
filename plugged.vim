@@ -31,7 +31,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-vinegar'                " enhance netrw
 Plug 'ervandew/supertab'                " completion
-Plug 'w0rp/ale'                         " linter checks
+Plug 'dense-analysis/ale'               " linter checks
 Plug 'milkypostman/vim-togglelist'      " toggle quickfix and location lists
 Plug 'junegunn/goyo.vim'                " distraction-free writing
 

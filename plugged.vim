@@ -59,6 +59,8 @@ Plug 'jlcrochet/vim-ruby'        ", { 'for': ['rb', 'rbs', 'erb' }
 " Text objects
 Plug 'vim-scripts/argtextobj.vim'           " arguments
 Plug 'michaeljsmith/vim-indent-object'      " indentation
+Plug 'kana/vim-textobj-user'                " create text objects
+Plug 'kana/vim-textobj-entire'              " entire buffer
 
 " Extensions
 Plug 'editorconfig/editorconfig-vim'        " editorconfig

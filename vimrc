@@ -261,6 +261,22 @@ augroup vimrc
   autocmd! BufNewFile,BufRead crontab.*  setl nobackup | setl nowritebackup   " Fix for crontab -e
 augroup END
 
+" Formatting
+function! FormatJSON()
+  execute ":'<,'>! jq"
+endfunction
+map <leader>fj :call FormatJSON()<CR>
+
+function! FormatColumnize()
+  execute "'<,'>! column -t"
+endfunction
+map <leader>fc :call FormatColumnize()<CR>
+
+function! FormatSort()
+  execute "'<,'>! sort"
+endfunction
+map <leader>fs :call FormatSort()<CR>
+
 " Go tools path
 let g:go_bin_path = expand('$HOME') . "/.local/libexec/go/bin"
 

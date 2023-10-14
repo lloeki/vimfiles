@@ -157,7 +157,7 @@ map <leader>p :Files<CR>
 " vim terminal sensible keys
 
 " go to normal mode (leave with i)
-tnoremap <Esc><Esc> <C-\><C-n>
+tnoremap <C-b> <C-\><C-n>
 
 " EasyAlign
 xmap ga <Plug>(EasyAlign)

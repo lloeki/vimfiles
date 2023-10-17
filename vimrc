@@ -68,7 +68,8 @@ let g:ale_virtualtext_cursor = 0
 let g:ale_ruby_rubocop_executable = 'bundle'
 let g:go_fmt_command = "goimports"
 "let g:ale_linters = {'ruby': ['standardrb']}
-"let g:ale_fixers = {'ruby': ['standardrb']}
+"let g:ale_fixers = { 'python': ['black'], 'ruby': ['standardrb'] }
+"let g:ale_fix_on_save = 1
 
 let g:ale_completion_enabled = 1
 set omnifunc=ale#completion#OmniFunc

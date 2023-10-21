@@ -309,4 +309,39 @@ function! UpdateTags()
 endfunction
 nnoremap <F8> :call UpdateTags()<CR>
 
+" project local vim config
+function! LocalInit()
+  let s:local_config_allowed = []
+  let s:local_config_allowed_file = expand('~/.vim/localvim')
+  if filereadable(s:local_config_allowed_file)
+    let s:local_config_allowed = readfile(s:local_config_allowed_file)
+  endif
+
+  let s:local_config_basename = '.local.vim'
+
+  let s:local_config_file = getcwd() . '/' . s:local_config_basename
+
+  if filereadable(s:local_config_file)
+    if index(s:local_config_allowed, s:local_config_file) < 0
+      echo "local config file disallowed: " . s:local_config_file
+    else
+      call LocalLoad()
+    endif
+  endif
+endfunction
+
+function! LocalLoad()
+  execute 'source' s:local_config_file
+endfunction
+
+function! LocalAllow()
+  call add(s:local_config_allowed, s:local_config_file)
+  call writefile(uniq(sort(s:local_config_allowed)), s:local_config_allowed_file)
+  call LocalLoad()
+endfunction
+
+call LocalInit()
+
+command LocalAllow call LocalAllow()
+
 " vim: ft=vim

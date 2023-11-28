@@ -34,6 +34,7 @@ Plug 'ervandew/supertab'                " completion
 Plug 'dense-analysis/ale'               " linter checks
 Plug 'milkypostman/vim-togglelist'      " toggle quickfix and location lists
 Plug 'junegunn/goyo.vim'                " distraction-free writing
+"Plug 'github/copilot.vim'               " github copilot
 
 " Languages
 Plug 'kchmck/vim-coffee-script'   , { 'for': 'coffee' }

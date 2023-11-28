@@ -56,6 +56,7 @@ Plug 'jjo/vim-cue'                , { 'for': 'cue' }
 Plug 'ionide/Ionide-vim'          , { 'for': 'fs' }
 Plug 'pocke/rbs.vim'              , { 'for': 'rbs' }
 "Plug 'jlcrochet/vim-ruby'        , { 'for': ['rb', 'rbs', 'erb' }
+Plug 'chimay/organ'               , { 'for': ['markdown', 'org'] }
 
 " Text objects
 Plug 'vim-scripts/argtextobj.vim'           " arguments

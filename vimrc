@@ -164,6 +164,12 @@ tnoremap <C-b> <C-\><C-n>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" organ
+if ! exists("g:organ_loaded")
+  let g:organ_config = {}
+  let g:organ_config.speedkeys = 1
+endif
+
 " quick task list
 command Tasks Ag '(TODO|FIX(?:ME|)|HACK|XXX|OPT(?:IMIZE|)|BUG|WTF|NOTE|CHANGED|REVIEW|IDEA):?\s?(.+$)'
 

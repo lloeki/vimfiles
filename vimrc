@@ -48,13 +48,18 @@ if !has('gui_running')
       set ttymouse=sgr
   end
   set background=light
-  colorscheme smpl
 
-  "use terminal background
-  "hi Normal ctermbg=none
-  "hi todo ctermbg=none
-  "hi statement ctermbg=none
-  "hi LineNr ctermbg=none
+  if $SSH_CLIENT
+    colorscheme smpl
+  else
+    colorscheme nofrils-dark
+
+    "use terminal background
+    hi Normal ctermbg=none
+    hi todo ctermbg=none
+    hi statement ctermbg=none
+    hi LineNr ctermbg=none
+  endif
 endif
 
 " Appearance tweaks

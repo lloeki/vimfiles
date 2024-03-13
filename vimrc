@@ -269,6 +269,7 @@ augroup vimrc
   autocmd FileType coffee                setl softtabstop=4 shiftwidth=4
   autocmd BufRead,BufNewFile Guardfile   setf ruby
   autocmd BufRead,BufNewFile Vagrantfile setf ruby
+  autocmd BufRead,BufNewFile Steepfile   setf ruby
   autocmd BufRead,BufNewFile *.skim      setf slim
   autocmd BufRead,BufNewFile *.opal      setf ruby
   autocmd FileType go                    setl nolist

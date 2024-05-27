@@ -55,10 +55,10 @@ if !has('gui_running')
     colorscheme nofrils-dark
 
     "use terminal background
-    hi Normal ctermbg=none
-    hi todo ctermbg=none
-    hi statement ctermbg=none
-    hi LineNr ctermbg=none
+    hi Normal ctermbg=none guibg=none
+    hi todo ctermbg=none guibg=none
+    hi statement ctermbg=none guibg=none
+    hi LineNr ctermbg=none guibg=none
   endif
 endif
 

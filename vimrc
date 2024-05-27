@@ -71,6 +71,7 @@ let g:ale_sign_error = '✖'
 let g:ale_sign_warning = '⚠'
 let g:ale_virtualtext_cursor = 0
 let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_ruby_steep_executable = 'bundle'
 let g:go_fmt_command = "goimports"
 "let g:ale_linters = {'ruby': ['standardrb']}
 "let g:ale_fixers = { 'python': ['black'], 'ruby': ['standardrb'] }

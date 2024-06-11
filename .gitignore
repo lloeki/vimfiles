@@ -3,3 +3,4 @@ tmp/
 .netrwhist
 plugged/*
 autoload/plug.vim.old
+/.envrc

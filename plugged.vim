@@ -73,5 +73,7 @@ Plug 'tpope/vim-commentary'                 " comments
 Plug 'tpope/vim-endwise'                    " extend `%`
 Plug 'tpope/vim-eunuch'                     " unix helpers
 Plug 'tpope/vim-unimpaired'                 " next/prev
+Plug 'tpope/vim-projectionist'              " .projections.json
+Plug 'tpope/vim-dispatch'                   " async compiler execution
 
 call plug#end()

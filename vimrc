@@ -17,7 +17,7 @@ let g:netrw_dirhistmax = 0
 set clipboard^=unnamed
 
 " Terminal title
-if has('macunix')
+if has('macunix') && $TERM_PROGRAM == 'Apple_Terminal'
   set title
   set t_ts=]6;
   set t_fs=
@@ -27,6 +27,7 @@ if has('macunix')
   endif
 else
   set title
+  autocmd BufEnter,BufRead * let &titlestring = expand("%:p")
 endif
 
 " Airline
@@ -47,18 +48,30 @@ if !has('gui_running')
   if has("mouse_sgr")
       set ttymouse=sgr
   end
-  set background=light
+  "set background=light
 
   if $SSH_CLIENT
     colorscheme smpl
   else
-    colorscheme nofrils-dark
+    if &background == 'light'
+      colorscheme nofrils-light
+    else
+      "colorscheme nofrils-dark
+      colorscheme nofrils-light
+    endif
 
     "use terminal background
-    hi Normal ctermbg=none guibg=none
-    hi todo ctermbg=none guibg=none
-    hi statement ctermbg=none guibg=none
-    hi LineNr ctermbg=none guibg=none
+    if has('nvim')
+      hi Normal ctermbg=none guibg=none
+      hi todo ctermbg=none guibg=none
+      hi statement ctermbg=none guibg=none
+      hi LineNr ctermbg=none guibg=none
+    else
+      hi Normal ctermbg=none
+      hi todo ctermbg=none
+      hi statement ctermbg=none
+      hi LineNr ctermbg=none
+    endif
   endif
 endif
 

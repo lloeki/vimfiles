@@ -17,17 +17,21 @@ let g:netrw_dirhistmax = 0
 set clipboard^=unnamed
 
 " Terminal title
-if has('macunix') && $TERM_PROGRAM == 'Apple_Terminal'
+if has('macunix') && $TERM_PROGRAM ==# 'Apple_Terminal'
   set title
   set t_ts=]6;
   set t_fs=
-  if !exists("autocmd_terminal_title")
+  if !exists('autocmd_terminal_title')
     let autocmd_terminal_title = 1
-    autocmd BufEnter,BufRead * let &titlestring = "file://" . hostname() . expand("%:p")
+    augroup TermTitle
+      autocmd BufEnter,BufRead * let &titlestring = "file://" . hostname() . expand("%:p")
+    augroup END
   endif
 else
   set title
-  autocmd BufEnter,BufRead * let &titlestring = expand("%:p")
+  augroup TermTitle
+    autocmd BufEnter,BufRead * let &titlestring = expand("%:p")
+  augroup END
 endif
 
 " Airline
@@ -42,7 +46,7 @@ let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.whitespace = ''
 
 function! DetectMode()
-    if has('macunix') && $TERM_PROGRAM == 'Apple_Terminal'
+    if has('macunix') && $TERM_PROGRAM ==# 'Apple_Terminal'
       let s:mode = system('defaults read -g AppleInterfaceStyle')
       if v:shell_error
         set background=light
@@ -78,7 +82,7 @@ endfunction
 if !has('gui_running')
   set showtabline=1           "automatic tab bar
   set mouse=n                 "mouse support
-  if has("mouse_sgr")
+  if has('mouse_sgr')
       set ttymouse=sgr
   end
 
@@ -90,8 +94,10 @@ if !has('gui_running')
   endif
 endif
 
-au User LumenLight call ApplyMode()
-au User LumenDark call ApplyMode()
+augroup Lumen
+  autocmd User LumenLight call ApplyMode()
+  autocmd User LumenDark call ApplyMode()
+augroup END
 
 " Appearance tweaks
 hi VertSplit cterm=NONE gui=NONE
@@ -104,7 +110,7 @@ let g:ale_virtualtext_cursor = 0
 let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_ruby_steep_executable = 'bundle'
 let g:ale_ruby_standardrb_executable = 'bundle'
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = 'goimports'
 "let g:ale_linters = {'ruby': ['standardrb']}
 "let g:ale_fixers = { 'python': ['black'], 'ruby': ['standardrb'] }
 "let g:ale_fix_on_save = 1
@@ -144,14 +150,14 @@ set hlsearch                "highlight search matches
 set showmatch               "highlight both matching parentheses
 
 " Swap and undo files
-set dir=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
+set directory=~/.vim/tmp/swap//,/var/tmp//,/tmp//,.
 "set undodir=~/.vim/tmp/undo//,.
 
 " Buffer management
-set swb=usetab      "make :sb <filename> go to tabs too
+set switchbuf=usetab      "make :sb <filename> go to tabs too
 
 " SuperTab options
-let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabDefaultCompletionType = 'context'
 " Complete options (disable preview scratch window)
 set completeopt=menu,menuone,longest
 " Limit popup menu height
@@ -203,7 +209,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " organ
-if ! exists("g:organ_loaded")
+if ! exists('g:organ_loaded')
   let g:organ_config = {}
   let g:organ_config.speedkeys = 1
 endif
@@ -216,10 +222,10 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.\*']
 
 " Restore last known cursor position
 function! ResCur()
-  if &filetype == 'netrw'
+  if &filetype ==# 'netrw'
     return 0
   endif
-  if line("'\"") <= line("$")
+  if line("'\"") <= line('$')
     normal! g`"
     return 1
   endif
@@ -230,7 +236,7 @@ if has('macunix')
   function! OpenURLUnderCursor()
     let s:uri = matchstr(getline('.'), '[a-z]*:\/\/[^ >,;()]*')
     let s:uri = shellescape(s:uri, 1)
-    if s:uri != ''
+    if s:uri !=# ''
       silent exec "!open '".s:uri."'"
       :redraw!
     endif
@@ -239,12 +245,12 @@ if has('macunix')
 endif
 
 " Unfold at cursor position
-if has("folding")
+if has('folding')
   function! UnfoldCur()
     if !&foldenable
       return
     endif
-    let cl = line(".")
+    let cl = line('.')
     if cl <= 1
       return
     endif
@@ -252,7 +258,7 @@ if has("folding")
     let uf  = foldlevel(cl - 1)
     let min = (cf > uf ? uf : cf)
     if min
-      execute "normal!" min . "zo"
+      execute 'normal!' min . 'zo'
       return 1
     endif
   endfunction
@@ -261,7 +267,7 @@ endif
 " Restore last known cursor position on open
 augroup resCur
   autocmd!
-  if has("folding")
+  if has('folding')
     autocmd BufWinEnter * if ResCur() | call UnfoldCur() | endif
   else
     autocmd BufWinEnter * call ResCur()
@@ -287,7 +293,7 @@ endfunction
 
 function! ShellcheckSet(buffer)
   let l:shell = ShellcheckDetect(a:buffer)
-  if l:shell == 'bash'
+  if l:shell ==# 'bash'
     call setbufvar(a:buffer, 'is_bash', 1)
   else
     call setbufvar(a:buffer, 'is_bash', 0)
@@ -328,7 +334,7 @@ endfunction
 map <leader>fs :call FormatSort()<CR>
 
 " Go tools path
-let g:go_bin_path = expand('$HOME') . "/.local/libexec/go/bin"
+let g:go_bin_path = expand('$HOME') . '/.local/libexec/go/bin'
 
 if expand('%:t') =~? 'rfc\d\+' || expand('%:t') =~? 'draft-.*-\d\{2,}'
   setfiletype rfc
@@ -338,7 +344,7 @@ endif
 map <leader>s :mksession!<CR>
 " Restore session if Session.vim exists
 "function! RestoreSession()
-"  if argc() == 0 && filereadable("Session.vim") "vim called without arguments
+"  if argc() == 0 && filereadable('Session.vim') "vim called without arguments
 "    "let answer = confirm('foo?', '&Yes\nNo', 1)
 "    execute 'source Session.vim'
 "  end
@@ -349,9 +355,9 @@ map <leader>s :mksession!<CR>
 source $VIMRUNTIME/macros/matchit.vim
 
 function! UpdateTags()
-  execute ":silent !ctags -R ."
-  execute ":redraw!"
-  echohl StatusLine | echo "tags updated" | echohl None
+  execute ':silent !ctags -R .'
+  execute ':redraw!'
+  echohl StatusLine | echo 'tags updated' | echohl None
 endfunction
 nnoremap <F8> :call UpdateTags()<CR>
 
@@ -369,7 +375,7 @@ function! LocalInit()
 
   if filereadable(s:local_config_file)
     if index(s:local_config_allowed, s:local_config_file) < 0
-      echo "local config file disallowed: " . s:local_config_file
+      echo 'local config file disallowed: ' . s:local_config_file
     else
       call LocalLoad()
     endif

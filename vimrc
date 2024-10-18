@@ -41,23 +41,23 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.whitespace = ''
 
-" Terminal behavior and appearance
-if !has('gui_running')
-  set showtabline=1           "automatic tab bar
-  set mouse=n                 "mouse support
-  if has("mouse_sgr")
-      set ttymouse=sgr
-  end
-  "set background=light
+function! DetectMode()
+    if has('macunix') && $TERM_PROGRAM == 'Apple_Terminal'
+      let s:mode = system('defaults read -g AppleInterfaceStyle')
+      if v:shell_error
+        set background=light
+      else
+        set background=dark
+      endif
+    endif
+endfunction
 
-  if $SSH_CLIENT
-    colorscheme smpl
-  else
-    if &background == 'light'
+function! ApplyMode()
+    " set theme
+    if &background ==# 'light'
       colorscheme nofrils-light
     else
-      "colorscheme nofrils-dark
-      colorscheme nofrils-light
+      colorscheme nofrils-dark
     endif
 
     "use terminal background
@@ -72,8 +72,26 @@ if !has('gui_running')
       hi statement ctermbg=none
       hi LineNr ctermbg=none
     endif
+endfunction
+
+" Terminal behavior and appearance
+if !has('gui_running')
+  set showtabline=1           "automatic tab bar
+  set mouse=n                 "mouse support
+  if has("mouse_sgr")
+      set ttymouse=sgr
+  end
+
+  if $SSH_CLIENT
+    colorscheme smpl
+  else
+    call DetectMode()
+    call ApplyMode()
   endif
 endif
+
+au User LumenLight call ApplyMode()
+au User LumenDark call ApplyMode()
 
 " Appearance tweaks
 hi VertSplit cterm=NONE gui=NONE

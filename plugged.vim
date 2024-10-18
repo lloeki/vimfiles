@@ -18,6 +18,9 @@ Plug 'olivertaylor/vacme'
 Plug 'pbrisbin/vim-colors-off'
 Plug 'ikaros/smpl-vim'
 
+" Detect dark/light mode
+Plug 'vimpostor/vim-lumen'
+
 " External tool integration
 Plug 'tpope/vim-bundler'      " bundler + gem-ctags
 Plug 'tpope/vim-fugitive'     " git

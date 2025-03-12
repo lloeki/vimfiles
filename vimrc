@@ -56,14 +56,7 @@ function! DetectMode()
     endif
 endfunction
 
-function! ApplyMode()
-    " set theme
-    if &background ==# 'light'
-      colorscheme nofrils-light
-    else
-      colorscheme nofrils-dark
-    endif
-
+function! UseTermBG()
     "use terminal background
     if has('nvim')
       hi Normal ctermbg=none guibg=none
@@ -78,6 +71,17 @@ function! ApplyMode()
     endif
 endfunction
 
+function! ApplyMode()
+    " set theme
+    if &background ==# 'light'
+      colorscheme habamax
+    else
+      colorscheme habamax
+    endif
+
+    call UseTermBG()
+endfunction
+
 " Terminal behavior and appearance
 if !has('gui_running')
   set showtabline=1           "automatic tab bar
@@ -87,7 +91,8 @@ if !has('gui_running')
   end
 
   if $SSH_CLIENT
-    colorscheme smpl
+    colorscheme habamax
+    call UseTermBG()
   else
     call DetectMode()
     call ApplyMode()

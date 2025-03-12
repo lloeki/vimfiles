@@ -24,6 +24,7 @@ Plug 'vimpostor/vim-lumen'
 " External tool integration
 Plug 'tpope/vim-bundler'      " bundler + gem-ctags
 Plug 'tpope/vim-fugitive'     " git
+Plug 'airblade/vim-gitgutter' " git gutter
 Plug 'jremmen/vim-ripgrep'    " rg is the new ag is the new ack
 
 " UI extensions
